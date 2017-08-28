@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 测试 | 善良的乌贼</title>
+  <title>webpack-proxyTable解决开发环境下跨域问题 | 善良的乌贼</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="善良的乌贼的个人博客，随意记录一些问题或者知识点。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="善良的乌贼">
-<meta property="og:url" content="http://chenyinkai.github.io/tags/测试/index.html">
+  <meta name="description" content="vue开发期间的API代理">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack-proxyTable解决开发环境下跨域问题">
+<meta property="og:url" content="http://chenyinkai.github.io/2017/08/28/webpack-proxyTable/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="善良的乌贼的个人博客，随意记录一些问题或者知识点。">
+<meta property="og:description" content="vue开发期间的API代理">
+<meta property="og:updated_time" content="2017-08-28T10:41:30.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="善良的乌贼">
-<meta name="twitter:description" content="善良的乌贼的个人博客，随意记录一些问题或者知识点。">
+<meta name="twitter:title" content="webpack-proxyTable解决开发环境下跨域问题">
+<meta name="twitter:description" content="vue开发期间的API代理">
   
     <link rel="alternate" href="/atom.xml" title="善良的乌贼" type="application/atom+xml">
   
@@ -66,42 +68,74 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/11/hello/" class="archive-article-date">
-  <time class="post-time" datetime="2017-08-11T03:51:02.000Z" itemprop="datePublished">
+        <section id="main"><article id="post-webpack-proxyTable" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/28/webpack-proxyTable/" class="article-date">
+  <time class="post-time" datetime="2017-08-28T10:24:33.000Z" itemprop="datePublished">
     <span class="post-month">8月</span><br/>
-    <span class="post-day">11</span>
+    <span class="post-day">28</span>
   </time>
 </a>
-      
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/11/hello/">hello</a>
+    <h1 class="article-title" itemprop="name">
+      webpack-proxyTable解决开发环境下跨域问题
     </h1>
   
 
-    </header>
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack/">webpack</a>
   </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">vue开发期间的API代理</a><br><a id="more"></a></p>
+<h3 id="在-config-index-js-下设置"><a href="#在-config-index-js-下设置" class="headerlink" title="在 config/index.js 下设置"></a>在 config/index.js 下设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/list'</span>: &#123;</div><div class="line">    target: <span class="string">'http://api.xxxx.cn'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/list'</span>: <span class="string">'/'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</em></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">例如我们需要请求 http://api.xxxx.cn/orderList/detail;</div><div class="line"></div><div class="line">在写 url 时只需要写成 /list/orderList/detail 即可</div></pre></td></tr></table></figure>
+<h3 id="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"><a href="#vue-cli的这个设置来自于其使用的插件http-proxy-middleware" class="headerlink" title="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"></a>vue-cli的这个设置来自于其使用的插件http-proxy-middleware</h3><p><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">插件github</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chenyinkai.github.io/2017/08/28/webpack-proxyTable/" data-id="cj6w0tver0004jsr02ijyjyja" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/22/swiperInVue/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue项目中使用swiper遇到的一些坑</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
 
 </section>
         
