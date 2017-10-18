@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://chenyinkai.github.io/images/swiper-0822/swiper1.png">
 <meta property="og:image" content="http://chenyinkai.github.io/images/swiper-0822/swiper2.png">
 <meta property="og:image" content="http://chenyinkai.github.io/images/swiper-0822/swiper3.png">
-<meta property="og:updated_time" content="2017-08-22T12:19:35.039Z">
+<meta property="og:updated_time" content="2017-10-18T07:23:33.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目中使用swiper遇到的一些坑">
 <meta name="twitter:description" content="前言今天在vue项目中需要实现一个轮播的效果，于是便想到了使用swiper，以下是使用过程中遇到的两个问题。">
@@ -48,8 +48,8 @@
     <h3 class="description">善良的乌贼的个人博客，随意记录一些问题或者知识点。</h3>
     <div class="count-box">
       <a href="/archives"><div><strong>7</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>4</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -110,7 +110,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在vue项目中需要实现一个轮播的效果，于是便想到了使用swiper，以下是使用过程中遇到的两个问题。<br><a id="more"></a></p>
-<h2 id="一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘"><a href="#一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘" class="headerlink" title="一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#‘"></a>一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#<object>‘</object></h2><p>原因：transform-runtime adds import to your files</p>
+<h2 id="一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘"><a href="#一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘" class="headerlink" title="一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#‘"></a>一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#<object>‘</object></h2><blockquote>
+<p>原因：transform-runtime adds import to your files</p>
+</blockquote>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><img src="/images/swiper-0822/swiper.png" alt="删除babelrc的插件一项的transfrom-runtime"></p>
 <h2 id="二、v-for渲染数据时，swiper失效"><a href="#二、v-for渲染数据时，swiper失效" class="headerlink" title="二、v-for渲染数据时，swiper失效"></a>二、v-for渲染数据时，swiper失效</h2><p><img src="/images/swiper-0822/swiper1.png" alt="v-for渲染数据，swiper轮播失效"></p>
 <h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>使用 $nextTick<br><img src="/images/swiper-0822/swiper2.png" alt="在$nextTick回调函数中初始化swiper"></p>
@@ -119,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chenyinkai.github.io/2017/08/22/swiperInVue/" data-id="cj6w0tvej0001jsr0oa4a0lt1" class="article-share-link">Share</a>
+      <a data-url="http://chenyinkai.github.io/2017/08/22/swiperInVue/" data-id="cj8wpr6e0000e7gr0vqggy5ns" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swiper/">swiper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -192,8 +194,8 @@
     <h3 class="description">善良的乌贼的个人博客，随意记录一些问题或者知识点。</h3>
     <div class="count-box">
       <a href="/archives"><div><strong>7</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>4</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>9</strong><br>标签</div></a>
+      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
     </div>
 
 

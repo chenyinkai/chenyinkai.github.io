@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: 小程序 | 善良的乌贼</title>
+  <title>移动端H5页面开发过程中遇到的问题 | 善良的乌贼</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="善良的乌贼的个人博客，随意记录一些问题或者知识点。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="善良的乌贼">
-<meta property="og:url" content="http://chenyinkai.github.io/categories/小程序/index.html">
+  <meta name="description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
+<meta name="keywords" content="移动端,HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端H5页面开发过程中遇到的问题">
+<meta property="og:url" content="http://chenyinkai.github.io/2017/09/25/quesInHtml5/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="善良的乌贼的个人博客，随意记录一些问题或者知识点。">
+<meta property="og:description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
+<meta property="og:updated_time" content="2017-10-18T07:22:53.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="善良的乌贼">
-<meta name="twitter:description" content="善良的乌贼的个人博客，随意记录一些问题或者知识点。">
+<meta name="twitter:title" content="移动端H5页面开发过程中遇到的问题">
+<meta name="twitter:description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
   
     <link rel="alternate" href="/atom.xml" title="善良的乌贼" type="application/atom+xml">
   
@@ -66,42 +68,72 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/15/wxParse/" class="archive-article-date">
-  <time class="post-time" datetime="2017-08-15T08:49:25.000Z" itemprop="datePublished">
-    <span class="post-month">8月</span><br/>
-    <span class="post-day">15</span>
+        <section id="main"><article id="post-quesInHtml5" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/25/quesInHtml5/" class="article-date">
+  <time class="post-time" datetime="2017-09-25T02:52:44.000Z" itemprop="datePublished">
+    <span class="post-month">9月</span><br/>
+    <span class="post-day">25</span>
   </time>
 </a>
-      
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/15/wxParse/">微信小程序富文本解析插件--wxParse</a>
+    <h1 class="article-title" itemprop="name">
+      移动端H5页面开发过程中遇到的问题
     </h1>
   
 
-    </header>
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
   </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。<br><a id="more"></a></p>
+<h3 id="一、ios上button，input等元素连续点击，页面会上移"><a href="#一、ios上button，input等元素连续点击，页面会上移" class="headerlink" title="一、ios上button，input等元素连续点击，页面会上移"></a>一、ios上button，input等元素连续点击，页面会上移</h3><blockquote>
+<p>引入js即可。<br>原理：判断点击时间间隔，两次点击超过500ms，才算有效点击。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    var agent = navigator.userAgent.toLowerCase();</div><div class="line">    var iLastTouch = null;</div><div class="line">    <span class="keyword">if</span> (agent.indexOf(<span class="string">'iphone'</span>) &gt;= 0 || agent.indexOf(<span class="string">'ipad'</span>) &gt;= 0)&#123;</div><div class="line">        document.body.addEventListener(<span class="string">'touchend'</span>, <span class="keyword">function</span>(event)&#123;</div><div class="line">            var iNow = new Date().getTime();</div><div class="line">            iLastTouch = iLastTouch || iNow + 1;</div><div class="line">            var delta = iNow - iLastTouch;</div><div class="line">            <span class="keyword">if</span> (delta &lt; 500 &amp;&amp; delta &gt; 0)&#123;</div><div class="line">                event.preventDefault();</div><div class="line">                <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">            iLastTouch = iNow;</div><div class="line">        &#125;, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="持续记录"><a href="#持续记录" class="headerlink" title="持续记录"></a>持续记录</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chenyinkai.github.io/2017/09/25/quesInHtml5/" data-id="cj8wpr6dy000c7gr0fjvub58r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/28/webpack-proxyTable/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">webpack-proxyTable解决开发环境下跨域问题</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 
 
 </section>
