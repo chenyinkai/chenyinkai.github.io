@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://chenyinkai.github.io/2017/09/25/quesInHtml5/index.html">
 <meta property="og:site_name" content="善良的乌贼">
 <meta property="og:description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
-<meta property="og:updated_time" content="2017-10-18T07:22:53.334Z">
+<meta property="og:updated_time" content="2018-01-04T08:40:28.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端H5页面开发过程中遇到的问题">
 <meta name="twitter:description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
@@ -42,9 +42,9 @@
     <h2 class="author">Asuna</h2>
     <h3 class="description">善良的乌贼的个人博客，随意记录一些问题或者知识点。</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>8</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>7</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>11</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -106,13 +106,13 @@
       
         <p>本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。<br><a id="more"></a></p>
 <h3 id="一、ios上button，input等元素连续点击，页面会上移"><a href="#一、ios上button，input等元素连续点击，页面会上移" class="headerlink" title="一、ios上button，input等元素连续点击，页面会上移"></a>一、ios上button，input等元素连续点击，页面会上移</h3><blockquote>
-<p>引入js即可。<br>原理：判断点击时间间隔，两次点击超过500ms，才算有效点击。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    var agent = navigator.userAgent.toLowerCase();</div><div class="line">    var iLastTouch = null;</div><div class="line">    <span class="keyword">if</span> (agent.indexOf(<span class="string">'iphone'</span>) &gt;= 0 || agent.indexOf(<span class="string">'ipad'</span>) &gt;= 0)&#123;</div><div class="line">        document.body.addEventListener(<span class="string">'touchend'</span>, <span class="keyword">function</span>(event)&#123;</div><div class="line">            var iNow = new Date().getTime();</div><div class="line">            iLastTouch = iLastTouch || iNow + 1;</div><div class="line">            var delta = iNow - iLastTouch;</div><div class="line">            <span class="keyword">if</span> (delta &lt; 500 &amp;&amp; delta &gt; 0)&#123;</div><div class="line">                event.preventDefault();</div><div class="line">                <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">            iLastTouch = iNow;</div><div class="line">        &#125;, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>引入js即可。<br>原理：判断点击时间间隔，两次点击超过500ms，才算有效点击。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> agent = navigator.userAgent.toLowerCase();</div><div class="line">    <span class="keyword">var</span> iLastTouch = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span> (agent.indexOf(<span class="string">'iphone'</span>) &gt;= <span class="number">0</span> || agent.indexOf(<span class="string">'ipad'</span>) &gt;= <span class="number">0</span>)&#123;</div><div class="line">        <span class="built_in">document</span>.body.addEventListener(<span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> iNow = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">            iLastTouch = iLastTouch || iNow + <span class="number">1</span>;</div><div class="line">            <span class="keyword">var</span> delta = iNow - iLastTouch;</div><div class="line">            <span class="keyword">if</span> (delta &lt; <span class="number">500</span> &amp;&amp; delta &gt; <span class="number">0</span>)&#123;</div><div class="line">                event.preventDefault();</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">            iLastTouch = iNow;</div><div class="line">        &#125;, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="持续记录"><a href="#持续记录" class="headerlink" title="持续记录"></a>持续记录</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chenyinkai.github.io/2017/09/25/quesInHtml5/" data-id="cj8wpr6dy000c7gr0fjvub58r" class="article-share-link">Share</a>
+      <a data-url="http://chenyinkai.github.io/2017/09/25/quesInHtml5/" data-id="cj8wpr6dy000c7gr0fjvub58r" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
@@ -123,9 +123,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2018/01/04/books/东野圭吾/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          东野圭吾作品读后感
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/08/28/webpack-proxyTable/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">webpack-proxyTable解决开发环境下跨域问题</div>
     </a>
   
@@ -175,9 +184,9 @@
     <h2 class="author">Asuna</h2>
     <h3 class="description">善良的乌贼的个人博客，随意记录一些问题或者知识点。</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>8</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>7</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>11</strong><br>标签</div></a>
     </div>
 
 
@@ -209,7 +218,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2016 - 2017 Asuna<br>
+      &copy;2017 - 2018 Asuna<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

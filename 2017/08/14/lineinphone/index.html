@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="善良的乌贼">
 <meta property="og:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
 <meta property="og:image" content="http://chenyinkai.github.io/images/borderimg.png">
-<meta property="og:updated_time" content="2017-10-18T07:22:33.033Z">
+<meta property="og:updated_time" content="2018-01-04T08:39:29.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端如何实现1px的细线">
 <meta name="twitter:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
@@ -44,9 +44,9 @@
     <h2 class="author">Asuna</h2>
     <h3 class="description">善良的乌贼的个人博客，随意记录一些问题或者知识点。</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>8</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>7</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>11</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -111,30 +111,30 @@
 <h2 id="实现方案："><a href="#实现方案：" class="headerlink" title="实现方案："></a>实现方案：</h2><h3 id="1-使用小数来写"><a href="#1-使用小数来写" class="headerlink" title="1.使用小数来写"></a>1.使用小数来写</h3><blockquote>
 <p>ios8及以上已经支持带小数的值；安卓和ios8以下不兼容。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.border &#123; border: 1px solid <span class="comment">#999 &#125;</span></div><div class="line">@media screen and (-webkit-min-device-pixel-ratio: 2) &#123;</div><div class="line">    .border &#123; border: 0.5px solid <span class="comment">#999 &#125;</span></div><div class="line">&#125;</div><div class="line">@media screen and (-webkit-min-device-pixel-ratio: 3) &#123;</div><div class="line">    .border &#123; border: 0.333333px solid <span class="comment">#999 &#125;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#999</span> &#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>) &#123;</div><div class="line">    <span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">0.5px</span> solid <span class="number">#999</span> &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">3</span>) &#123;</div><div class="line">    <span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">0.333333px</span> solid <span class="number">#999</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="2-div补位模拟"><a href="#2-div补位模拟" class="headerlink" title="2.div补位模拟"></a>2.div补位模拟</h3><blockquote>
 <p>手机淘宝使用：</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.tb_line&#123;  </div><div class="line">    box-sizing: border-box;  </div><div class="line">    line-height: 0;  </div><div class="line">    background-color: rgb(239, 239, 239);  </div><div class="line">    width: 100%;  </div><div class="line">    height: 1px;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.tb_line</span>&#123;  </div><div class="line">    <span class="attribute">box-sizing</span>: border-box;  </div><div class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;  </div><div class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(239, 239, 239);  </div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </div><div class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="3-使用阴影渐变"><a href="#3-使用阴影渐变" class="headerlink" title="3.使用阴影渐变"></a>3.使用阴影渐变</h3><blockquote>
 <p>使用box-shadow，设置白色阴影偏移实现</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.navTab&#123;  </div><div class="line">    border-bottom: 1px solid <span class="comment">#eceef0;  </span></div><div class="line">    box-shadow: 0 1px 1px <span class="comment">#fff;  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.navTab</span>&#123;  </div><div class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eceef0</span>;  </div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="number">#fff</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="4-使用伪类-before-after-与-transform"><a href="#4-使用伪类-before-after-与-transform" class="headerlink" title="4.使用伪类 :before, :after 与 transform"></a>4.使用伪类 :before, :after 与 transform</h3><blockquote>
 <p>构建1个伪元素, 将它的长宽放大到2倍, 边框宽度设置为1px, 再以transform缩放到50%.<br>优点: 其实不止是圆角, 其他的边框也可以这样做出来<br>缺点: 代码量也很大, 占据了伪元素, 容易引起冲突</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">.radius-border&#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">@media screen and (-webkit-min-device-pixel-ratio: 2)&#123;</div><div class="line">    .radius-border:before&#123;</div><div class="line">        content: <span class="string">""</span>;</div><div class="line">        pointer-events: none; /* 防止点击触发 */</div><div class="line">        box-sizing: border-box;</div><div class="line">        position: absolute;</div><div class="line">        width: 200%;</div><div class="line">        height: 200%;</div><div class="line">        left: 0;</div><div class="line">        top: 0;</div><div class="line">        border-radius: 8px;</div><div class="line">        border:1px solid <span class="comment">#999;</span></div><div class="line">        -webkit-transform(scale(0.5));</div><div class="line">        -webkit-transform-origin: 0 0;</div><div class="line">        transform(scale(0.5));</div><div class="line">        transform-origin: 0 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.radius-border</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>)&#123;</div><div class="line">    <span class="selector-class">.radius-border</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">        <span class="attribute">pointer-events</span>: none; <span class="comment">/* 防止点击触发 */</span></div><div class="line">        <span class="attribute">box-sizing</span>: border-box;</div><div class="line">        <span class="attribute">position</span>: absolute;</div><div class="line">        <span class="attribute">width</span>: <span class="number">200%</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">200%</span>;</div><div class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</div><div class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#999</span>;</div><div class="line">        -webkit-transform(scale(0.5));</div><div class="line">        <span class="selector-tag">-webkit-transform-origin</span>: 0 0;</div><div class="line">        <span class="selector-tag">transform</span>(<span class="selector-tag">scale</span>(0<span class="selector-class">.5</span>));</div><div class="line">        <span class="selector-tag">transform-origin</span>: 0 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="5-border-image"><a href="#5-border-image" class="headerlink" title="5.border-image"></a>5.border-image</h3><blockquote>
 <p>缺点: 对于圆角样式, 将图片放大修改成圆角也能满足需求, 但这样无形中增加了border的宽度，存在多种边框颜色或者更改的时候麻烦。</p>
 </blockquote>
 <p><img src="/images/borderimg.png" alt="这样的1张6X6的图片, 9宫格等分填充 border-image, 这样元素的 4 个边框宽度都只有 1px."></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@media screen and (-webkit-min-device-pixel-ratio: 2)&#123; </div><div class="line">    .border&#123; </div><div class="line">        border: 1px solid transparent;</div><div class="line">        border-image: url(border.gif) 2 repeat;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>)&#123; </div><div class="line">    <span class="selector-class">.border</span>&#123; </div><div class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</div><div class="line">        <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.gif) <span class="number">2</span> repeat;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这里只介绍这五种实现1px边框的方式，各种方式都有其优缺点，至于项目中具体使用何种方式，则由项目和开发者自己决定。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chenyinkai.github.io/2017/08/14/lineinphone/" data-id="cj8wpr6cf00007gr04nkrj6w3" class="article-share-link">Share</a>
+      <a data-url="http://chenyinkai.github.io/2017/08/14/lineinphone/" data-id="cj8wpr6cf00007gr04nkrj6w3" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
@@ -146,7 +146,7 @@
 <nav id="article-nav">
   
     <a href="/2017/08/15/wxParse/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Nieuwer</strong>
       <div class="article-nav-title">
         
           微信小程序富文本解析插件--wxParse
@@ -156,7 +156,7 @@
   
   
     <a href="/2017/08/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -206,9 +206,9 @@
     <h2 class="author">Asuna</h2>
     <h3 class="description">善良的乌贼的个人博客，随意记录一些问题或者知识点。</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>8</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>7</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>11</strong><br>标签</div></a>
     </div>
 
 
@@ -240,7 +240,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2016 - 2017 Asuna<br>
+      &copy;2017 - 2018 Asuna<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       
