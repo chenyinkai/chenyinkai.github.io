@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="移动端,HTML5," />
+  <meta name="keywords" content="HTML5,移动端," />
 
 
 
@@ -95,14 +95,14 @@
 
 
 <meta name="description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
-<meta name="keywords" content="移动端,HTML5">
+<meta name="keywords" content="HTML5,移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端H5页面开发过程中遇到的问题">
 <meta property="og:url" content="http://chenyinkai.github.io/2017/09/25/H5/quesInHtml5/index.html">
 <meta property="og:site_name" content="善良的乌贼">
 <meta property="og:description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T08:40:28.674Z">
+<meta property="og:updated_time" content="2018-02-10T02:42:09.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端H5页面开发过程中遇到的问题">
 <meta name="twitter:description" content="本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。">
@@ -191,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -227,6 +227,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -300,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">移动端H5页面开发过程中遇到的问题</h1>
+          <h2 class="post-title" itemprop="name headline">移动端H5页面开发过程中遇到的问题</h2>
         
 
         <div class="post-meta">
@@ -373,10 +383,30 @@
 
       
         <p>本篇文章主要介绍在开发移动端页面过程中，所遇到的一些问题以及解决方法。<br><a id="more"></a></p>
-<h3 id="一、ios上button，input等元素连续点击，页面会上移"><a href="#一、ios上button，input等元素连续点击，页面会上移" class="headerlink" title="一、ios上button，input等元素连续点击，页面会上移"></a>一、ios上button，input等元素连续点击，页面会上移</h3><blockquote>
-<p>引入js即可。<br>原理：判断点击时间间隔，两次点击超过500ms，才算有效点击。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> agent = navigator.userAgent.toLowerCase();</div><div class="line">    <span class="keyword">var</span> iLastTouch = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span> (agent.indexOf(<span class="string">'iphone'</span>) &gt;= <span class="number">0</span> || agent.indexOf(<span class="string">'ipad'</span>) &gt;= <span class="number">0</span>)&#123;</div><div class="line">        <span class="built_in">document</span>.body.addEventListener(<span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> iNow = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">            iLastTouch = iLastTouch || iNow + <span class="number">1</span>;</div><div class="line">            <span class="keyword">var</span> delta = iNow - iLastTouch;</div><div class="line">            <span class="keyword">if</span> (delta &lt; <span class="number">500</span> &amp;&amp; delta &gt; <span class="number">0</span>)&#123;</div><div class="line">                event.preventDefault();</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">            iLastTouch = iNow;</div><div class="line">        &#125;, <span class="literal">false</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h3 id="ios上button，input等元素连续点击，页面会上移"><a href="#ios上button，input等元素连续点击，页面会上移" class="headerlink" title="ios上button，input等元素连续点击，页面会上移"></a>ios上button，input等元素连续点击，页面会上移</h3><blockquote>
+<p>事件触发频率过高导致的响应速度跟不上触发频率，需要使用 <strong>函数防抖（debounce）</strong> 限制函数触发频率</p>
+<p><a href="https://github.com/chenyinkai/blog/issues/24" target="_blank" rel="external">具体使用参考这里</a></p>
 </blockquote>
-<h3 id="持续记录"><a href="#持续记录" class="headerlink" title="持续记录"></a>持续记录</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">fn, wait = <span class="number">0</span></span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> inDebounce;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">const</span> context = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">const</span> args = <span class="built_in">arguments</span>;</div><div class="line">        clearTimeout(inDebounce);</div><div class="line">        inDebounce = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> fn.apply(context, args), wait);</div><div class="line">    &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="移动端滚动穿透"><a href="#移动端滚动穿透" class="headerlink" title="移动端滚动穿透"></a>移动端滚动穿透</h3><p><a href="http://www.zhangxinxu.com/wordpress/2016/12/web-mobile-scroll-prevent-window-js-css/" target="_blank" rel="external">解决方法见这里</a></p>
+<h3 id="移动端出现输入框时，底部内容（fixed定位元素）会被顶到输入框上面去"><a href="#移动端出现输入框时，底部内容（fixed定位元素）会被顶到输入框上面去" class="headerlink" title="移动端出现输入框时，底部内容（fixed定位元素）会被顶到输入框上面去"></a>移动端出现输入框时，底部内容（fixed定位元素）会被顶到输入框上面去</h3><p>解决方法：<br>1.添加事件，点击输入框时，使底部内容消失<br>2.<a href="http://efe.baidu.com/blog/mobile-fixed-layout/" target="_blank" rel="external">http://efe.baidu.com/blog/mobile-fixed-layout/</a></p>
+<h3 id="ios会识别长数字为号码"><a href="#ios会识别长数字为号码" class="headerlink" title="ios会识别长数字为号码"></a>ios会识别长数字为号码</h3><blockquote>
+<p>增加 <code>meta</code></p>
+</blockquote>
+<p><code>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;</code></p>
+<h3 id="ios设备无法自动播放音频"><a href="#ios设备无法自动播放音频" class="headerlink" title="ios设备无法自动播放音频"></a>ios设备无法自动播放音频</h3><blockquote>
+<p>监听触摸事件播放</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'html'</span>).one(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    audio.play()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="禁止ios和android用户选中文字"><a href="#禁止ios和android用户选中文字" class="headerlink" title="禁止ios和android用户选中文字"></a>禁止ios和android用户选中文字</h3><p><code>-webkit-user-select:none</code></p>
+<h3 id="ios下取消input在输入的时候英文首字母的默认大写"><a href="#ios下取消input在输入的时候英文首字母的默认大写" class="headerlink" title="ios下取消input在输入的时候英文首字母的默认大写"></a>ios下取消input在输入的时候英文首字母的默认大写</h3><p><code>&lt;input type=&quot;text&quot; autocapitalize=&quot;none&quot;&gt;</code></p>
+<h3 id="调用ios或者安卓拨号功能"><a href="#调用ios或者安卓拨号功能" class="headerlink" title="调用ios或者安卓拨号功能"></a>调用ios或者安卓拨号功能</h3><p><code>&lt;a href=&quot;tel:10010&quot;&gt;10010&lt;/a&gt;</code></p>
+<h3 id="上下拉动滚动条时卡顿、慢"><a href="#上下拉动滚动条时卡顿、慢" class="headerlink" title="上下拉动滚动条时卡顿、慢"></a>上下拉动滚动条时卡顿、慢</h3><blockquote>
+<p>ios设置 <code>overflow: scroll;</code> 时滚动卡顿</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line"> <span class="attribute">-webkit-overflow-scrolling</span>: touch;</div><div class="line"> <span class="attribute">overflow-scrolling</span>: touch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="iphone及ipad下输入框默认内阴影"><a href="#iphone及ipad下输入框默认内阴影" class="headerlink" title="iphone及ipad下输入框默认内阴影"></a>iphone及ipad下输入框默认内阴影</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">Element</span>&#123;</div><div class="line"> <span class="attribute">-webkit-appearance</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -393,9 +423,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/移动端/" rel="tag"># 移动端</a>
-          
             <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+          
+            <a href="/tags/移动端/" rel="tag"># 移动端</a>
           
         </div>
       
@@ -489,15 +519,15 @@
                alt="Yinkai Chen" />
           <p class="site-author-name" itemprop="name">Yinkai Chen</p>
            
-              <p class="site-description motion-element" itemprop="description">在一条通往牛逼的路上，我不断狂奔。</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -554,6 +584,17 @@
                 </a>
               </span>
             
+              <span class="links-of-author-item">
+                <a href="chenyinkai0223@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
           
         </div>
 
@@ -578,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、ios上button，input等元素连续点击，页面会上移"><span class="nav-number">1.</span> <span class="nav-text">一、ios上button，input等元素连续点击，页面会上移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持续记录"><span class="nav-number">2.</span> <span class="nav-text">持续记录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ios上button，input等元素连续点击，页面会上移"><span class="nav-number">1.</span> <span class="nav-text">ios上button，input等元素连续点击，页面会上移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端滚动穿透"><span class="nav-number">2.</span> <span class="nav-text">移动端滚动穿透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端出现输入框时，底部内容（fixed定位元素）会被顶到输入框上面去"><span class="nav-number">3.</span> <span class="nav-text">移动端出现输入框时，底部内容（fixed定位元素）会被顶到输入框上面去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios会识别长数字为号码"><span class="nav-number">4.</span> <span class="nav-text">ios会识别长数字为号码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios设备无法自动播放音频"><span class="nav-number">5.</span> <span class="nav-text">ios设备无法自动播放音频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止ios和android用户选中文字"><span class="nav-number">6.</span> <span class="nav-text">禁止ios和android用户选中文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios下取消input在输入的时候英文首字母的默认大写"><span class="nav-number">7.</span> <span class="nav-text">ios下取消input在输入的时候英文首字母的默认大写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用ios或者安卓拨号功能"><span class="nav-number">8.</span> <span class="nav-text">调用ios或者安卓拨号功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下拉动滚动条时卡顿、慢"><span class="nav-number">9.</span> <span class="nav-text">上下拉动滚动条时卡顿、慢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iphone及ipad下输入框默认内阴影"><span class="nav-number">10.</span> <span class="nav-text">iphone及ipad下输入框默认内阴影</span></a></li></ol></div>
             
 
           </div>
@@ -657,10 +698,10 @@
 
 
 
-  
-  
 
 
+  
+  
 
 
 
@@ -690,7 +731,7 @@
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
 
 
   

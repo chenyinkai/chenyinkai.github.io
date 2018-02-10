@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="善良的乌贼">
 <meta property="og:description" content="vue开发期间的API代理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T01:15:26.566Z">
+<meta property="og:updated_time" content="2018-02-10T03:16:36.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack-proxyTable解决开发环境下跨域问题">
 <meta name="twitter:description" content="vue开发期间的API代理">
@@ -191,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -227,6 +227,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -300,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">webpack-proxyTable解决开发环境下跨域问题</h1>
+          <h2 class="post-title" itemprop="name headline">webpack-proxyTable解决开发环境下跨域问题</h2>
         
 
         <div class="post-meta">
@@ -373,9 +383,12 @@
 
       
         <p><a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">vue开发期间的API代理</a><br><a id="more"></a></p>
-<h3 id="在-config-index-js-下设置"><a href="#在-config-index-js-下设置" class="headerlink" title="在 config/index.js 下设置"></a>在 config/index.js 下设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/list'</span>: &#123;</div><div class="line">    target: <span class="string">'http://api.xxxx.cn'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/list'</span>: <span class="string">'/'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><em>changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</em></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">例如我们需要请求 http://api.xxxx.cn/orderList/detail;</div><div class="line"></div><div class="line">在写 url 时只需要写成 /list/orderList/detail 即可</div></pre></td></tr></table></figure>
+<h3 id="在-config-index-js-下设置"><a href="#在-config-index-js-下设置" class="headerlink" title="在 config/index.js 下设置"></a>在 config/index.js 下设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/list'</span>: &#123;</div><div class="line">    target: <span class="string">'http://api.xxxx.cn'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/list'</span>: <span class="string">'/'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><blockquote>
+<p>例如我们需要请求 <a href="http://api.xxxx.cn/orderList/detail" target="_blank" rel="external">http://api.xxxx.cn/orderList/detail</a>;</p>
+<p>在写 url 时只需要写成 /list/orderList/detail 即可</p>
+</blockquote>
 <h3 id="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"><a href="#vue-cli的这个设置来自于其使用的插件http-proxy-middleware" class="headerlink" title="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"></a>vue-cli的这个设置来自于其使用的插件http-proxy-middleware</h3><p><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">插件github</a></p>
 
       
@@ -488,15 +501,15 @@
                alt="Yinkai Chen" />
           <p class="site-author-name" itemprop="name">Yinkai Chen</p>
            
-              <p class="site-description motion-element" itemprop="description">在一条通往牛逼的路上，我不断狂奔。</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -549,6 +562,17 @@
                   
                     
                       segmentfault
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="chenyinkai0223@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
                     
                 </a>
               </span>
@@ -656,10 +680,10 @@
 
 
 
-  
-  
 
 
+  
+  
 
 
 
@@ -689,7 +713,7 @@
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
 
 
   

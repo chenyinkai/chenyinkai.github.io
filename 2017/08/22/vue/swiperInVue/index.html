@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://chenyinkai.github.io/images/swiper-0822/swiper1.png">
 <meta property="og:image" content="http://chenyinkai.github.io/images/swiper-0822/swiper2.png">
 <meta property="og:image" content="http://chenyinkai.github.io/images/swiper-0822/swiper3.png">
-<meta property="og:updated_time" content="2017-10-18T07:23:33.584Z">
+<meta property="og:updated_time" content="2018-02-10T03:21:44.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目中使用swiper遇到的一些坑">
 <meta name="twitter:description" content="前言今天在vue项目中需要实现一个轮播的效果，于是便想到了使用swiper，以下是使用过程中遇到的两个问题。">
@@ -196,7 +196,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -232,6 +232,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -305,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue项目中使用swiper遇到的一些坑</h1>
+          <h2 class="post-title" itemprop="name headline">vue项目中使用swiper遇到的一些坑</h2>
         
 
         <div class="post-meta">
@@ -380,12 +390,18 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在vue项目中需要实现一个轮播的效果，于是便想到了使用swiper，以下是使用过程中遇到的两个问题。<br><a id="more"></a></p>
 <h2 id="一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘"><a href="#一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘" class="headerlink" title="一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#‘"></a>一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#<object>‘</object></h2><blockquote>
 <p>原因：transform-runtime adds import to your files</p>
+<p>解决</p>
 </blockquote>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><img src="/images/swiper-0822/swiper.png" alt="删除babelrc的插件一项的transfrom-runtime"></p>
+<p><img src="/images/swiper-0822/swiper.png" alt="删除babelrc的插件一项的transfrom-runtime"></p>
 <h2 id="二、v-for渲染数据时，swiper失效"><a href="#二、v-for渲染数据时，swiper失效" class="headerlink" title="二、v-for渲染数据时，swiper失效"></a>二、v-for渲染数据时，swiper失效</h2><p><img src="/images/swiper-0822/swiper1.png" alt="v-for渲染数据，swiper轮播失效"></p>
-<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>使用 $nextTick<br><img src="/images/swiper-0822/swiper2.png" alt="在$nextTick回调函数中初始化swiper"></p>
+<blockquote>
+<p>使用 $nextTick</p>
+</blockquote>
+<p><img src="/images/swiper-0822/swiper2.png" alt="在$nextTick回调函数中初始化swiper"></p>
 <h2 id="nextTick-和-nextTick"><a href="#nextTick-和-nextTick" class="headerlink" title="$nextTick 和 nextTick"></a>$nextTick 和 nextTick</h2><p><img src="/images/swiper-0822/swiper3.png" alt=""></p>
-<h3 id="nextTick-表示数据更新之后的回调函数"><a href="#nextTick-表示数据更新之后的回调函数" class="headerlink" title="nextTick 表示数据更新之后的回调函数"></a>nextTick 表示数据更新之后的回调函数</h3><h3 id="nextTick-表示数据渲染完成后的回调函数"><a href="#nextTick-表示数据渲染完成后的回调函数" class="headerlink" title="$nextTick 表示数据渲染完成后的回调函数"></a>$nextTick 表示数据渲染完成后的回调函数</h3>
+<p>nextTick 表示数据更新之后的回调函数</p>
+<p>$nextTick 表示数据渲染完成后的回调函数</p>
+
       
     </div>
     
@@ -498,15 +514,15 @@
                alt="Yinkai Chen" />
           <p class="site-author-name" itemprop="name">Yinkai Chen</p>
            
-              <p class="site-description motion-element" itemprop="description">在一条通往牛逼的路上，我不断狂奔。</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -563,6 +579,17 @@
                 </a>
               </span>
             
+              <span class="links-of-author-item">
+                <a href="chenyinkai0223@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
           
         </div>
 
@@ -587,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘"><span class="nav-number">2.</span> <span class="nav-text">一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#‘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、v-for渲染数据时，swiper失效"><span class="nav-number">4.</span> <span class="nav-text">二、v-for渲染数据时，swiper失效</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-number">4.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nextTick-和-nextTick"><span class="nav-number">5.</span> <span class="nav-text">$nextTick 和 nextTick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nextTick-表示数据更新之后的回调函数"><span class="nav-number">5.1.</span> <span class="nav-text">nextTick 表示数据更新之后的回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nextTick-表示数据渲染完成后的回调函数"><span class="nav-number">5.2.</span> <span class="nav-text">$nextTick 表示数据渲染完成后的回调函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、引入swiper时报错-Cannot-assign-to-read-only-property-‘exports’-of-object-‘-‘"><span class="nav-number">2.</span> <span class="nav-text">一、引入swiper时报错  Cannot assign to read only property ‘exports’ of object ‘#‘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、v-for渲染数据时，swiper失效"><span class="nav-number">3.</span> <span class="nav-text">二、v-for渲染数据时，swiper失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nextTick-和-nextTick"><span class="nav-number">4.</span> <span class="nav-text">$nextTick 和 nextTick</span></a></li></ol></div>
             
 
           </div>
@@ -666,10 +693,10 @@
 
 
 
-  
-  
 
 
+  
+  
 
 
 
@@ -699,7 +726,7 @@
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
 
 
   

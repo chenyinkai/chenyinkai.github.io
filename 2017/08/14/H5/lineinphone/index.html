@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,移动端," />
+  <meta name="keywords" content="移动端,css," />
 
 
 
@@ -94,20 +94,18 @@
 
 
 
-<meta name="description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
-<meta name="keywords" content="css,移动端">
+<meta name="description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是 border-width:1px; 效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
+<meta name="keywords" content="移动端,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端如何实现1px的细线">
 <meta property="og:url" content="http://chenyinkai.github.io/2017/08/14/H5/lineinphone/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
+<meta property="og:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是 border-width:1px; 效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://chenyinkai.github.io/images/borderimg.png">
-<meta property="og:updated_time" content="2018-01-04T08:39:29.448Z">
+<meta property="og:updated_time" content="2018-02-10T02:29:51.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端如何实现1px的细线">
-<meta name="twitter:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
-<meta name="twitter:image" content="http://chenyinkai.github.io/images/borderimg.png">
+<meta name="twitter:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是 border-width:1px; 效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
 
 
 
@@ -193,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -229,6 +227,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -302,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">移动端如何实现1px的细线</h1>
+          <h2 class="post-title" itemprop="name headline">移动端如何实现1px的细线</h2>
         
 
         <div class="post-meta">
@@ -374,30 +382,21 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做移动端项目的时候，我们往往需要设置1px的边框，但是 <code>border-width:1px;</code> 效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。</p>
 <a id="more"></a>
-<h2 id="实现方案："><a href="#实现方案：" class="headerlink" title="实现方案："></a>实现方案：</h2><h3 id="1-使用小数来写"><a href="#1-使用小数来写" class="headerlink" title="1.使用小数来写"></a>1.使用小数来写</h3><blockquote>
-<p>ios8及以上已经支持带小数的值；安卓和ios8以下不兼容。</p>
+<h2 id="实现方案："><a href="#实现方案：" class="headerlink" title="实现方案："></a>实现方案：</h2><h3 id="1-多背景渐变"><a href="#1-多背景渐变" class="headerlink" title="1.多背景渐变"></a>1.多背景渐变</h3><blockquote>
+<p>设置1px的渐变背景，50%有颜色，50%透明。。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#999</span> &#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>) &#123;</div><div class="line">    <span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">0.5px</span> solid <span class="number">#999</span> &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">3</span>) &#123;</div><div class="line">    <span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">0.333333px</span> solid <span class="number">#999</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="2-div补位模拟"><a href="#2-div补位模拟" class="headerlink" title="2.div补位模拟"></a>2.div补位模拟</h3><blockquote>
-<p>手机淘宝使用：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.background-gradient-1px</span>&#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-gradient</span>(linear, left top, left bottom, color-stop(.5, transparent), <span class="built_in">color-stop</span>(.5, #c8c7cc), <span class="built_in">to</span>(#c8c7cc)) left bottom repeat-x;</div><div class="line">    <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-box-shadow-模拟边框"><a href="#2-box-shadow-模拟边框" class="headerlink" title="2.box-shadow 模拟边框"></a>2.box-shadow 模拟边框</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box-shadow-1px</span> &#123;</div><div class="line">    <span class="attribute">border</span>: none;</div><div class="line">    <span class="attribute">box-shadow</span>: inset <span class="number">0px</span> -<span class="number">1px</span> <span class="number">1px</span> -<span class="number">1px</span> <span class="number">#c8c7cc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-使用伪类-before-after-与-transform"><a href="#3-使用伪类-before-after-与-transform" class="headerlink" title="3.使用伪类 :before, :after 与 transform"></a>3.使用伪类 :before, :after 与 transform</h3><blockquote>
+<p>单条 <code>border</code> 样式设置</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.tb_line</span>&#123;  </div><div class="line">    <span class="attribute">box-sizing</span>: border-box;  </div><div class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;  </div><div class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(239, 239, 239);  </div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </div><div class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="3-使用阴影渐变"><a href="#3-使用阴影渐变" class="headerlink" title="3.使用阴影渐变"></a>3.使用阴影渐变</h3><blockquote>
-<p>使用box-shadow，设置白色阴影偏移实现</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.scale-1px</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">border</span>:none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.scale-1px</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#000</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scaleY</span>(0.5);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(0.5);</div><div class="line">    <span class="attribute">-webkit-transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>四条 <code>border</code> 样式</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.navTab</span>&#123;  </div><div class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eceef0</span>;  </div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="number">#fff</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="4-使用伪类-before-after-与-transform"><a href="#4-使用伪类-before-after-与-transform" class="headerlink" title="4.使用伪类 :before, :after 与 transform"></a>4.使用伪类 :before, :after 与 transform</h3><blockquote>
-<p>构建1个伪元素, 将它的长宽放大到2倍, 边框宽度设置为1px, 再以transform缩放到50%.<br>优点: 其实不止是圆角, 其他的边框也可以这样做出来<br>缺点: 代码量也很大, 占据了伪元素, 容易引起冲突</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.radius-border</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>)&#123;</div><div class="line">    <span class="selector-class">.radius-border</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">        <span class="attribute">pointer-events</span>: none; <span class="comment">/* 防止点击触发 */</span></div><div class="line">        <span class="attribute">box-sizing</span>: border-box;</div><div class="line">        <span class="attribute">position</span>: absolute;</div><div class="line">        <span class="attribute">width</span>: <span class="number">200%</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">200%</span>;</div><div class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</div><div class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#999</span>;</div><div class="line">        -webkit-transform(scale(0.5));</div><div class="line">        <span class="selector-tag">-webkit-transform-origin</span>: 0 0;</div><div class="line">        <span class="selector-tag">transform</span>(<span class="selector-tag">scale</span>(0<span class="selector-class">.5</span>));</div><div class="line">        <span class="selector-tag">transform-origin</span>: 0 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5-border-image"><a href="#5-border-image" class="headerlink" title="5.border-image"></a>5.border-image</h3><blockquote>
-<p>缺点: 对于圆角样式, 将图片放大修改成圆角也能满足需求, 但这样无形中增加了border的宽度，存在多种边框颜色或者更改的时候麻烦。</p>
-</blockquote>
-<p><img src="/images/borderimg.png" alt="这样的1张6X6的图片, 9宫格等分填充 border-image, 这样元素的 4 个边框宽度都只有 1px."></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>)&#123; </div><div class="line">    <span class="selector-class">.border</span>&#123; </div><div class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</div><div class="line">        <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.gif) <span class="number">2</span> repeat;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这里只介绍这五种实现1px边框的方式，各种方式都有其优缺点，至于项目中具体使用何种方式，则由项目和开发者自己决定。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.scale-1px</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">border</span>:none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.scale-1px</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">    <span class="attribute">-webkit-box-sizing</span>: border-box;</div><div class="line">    <span class="attribute">box-sizing</span>: border-box;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200%</span>;</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(0.5);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.5);</div><div class="line">    <span class="attribute">-webkit-transform-origin</span>: left top;</div><div class="line">    <span class="attribute">transform-origin</span>: left top;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -415,9 +414,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
-          
             <a href="/tags/移动端/" rel="tag"># 移动端</a>
+          
+            <a href="/tags/css/" rel="tag"># css</a>
           
         </div>
       
@@ -429,6 +428,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/02/css/mediacy-div/" rel="next" title="div居中方法">
+                <i class="fa fa-chevron-left"></i> div居中方法
+              </a>
             
           </div>
 
@@ -507,15 +510,15 @@
                alt="Yinkai Chen" />
           <p class="site-author-name" itemprop="name">Yinkai Chen</p>
            
-              <p class="site-description motion-element" itemprop="description">在一条通往牛逼的路上，我不断狂奔。</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -572,6 +575,17 @@
                 </a>
               </span>
             
+              <span class="links-of-author-item">
+                <a href="chenyinkai0223@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
           
         </div>
 
@@ -596,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方案："><span class="nav-number">2.</span> <span class="nav-text">实现方案：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用小数来写"><span class="nav-number">2.1.</span> <span class="nav-text">1.使用小数来写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-div补位模拟"><span class="nav-number">2.2.</span> <span class="nav-text">2.div补位模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用阴影渐变"><span class="nav-number">2.3.</span> <span class="nav-text">3.使用阴影渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-使用伪类-before-after-与-transform"><span class="nav-number">2.4.</span> <span class="nav-text">4.使用伪类 :before, :after 与 transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-border-image"><span class="nav-number">2.5.</span> <span class="nav-text">5.border-image</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方案："><span class="nav-number">2.</span> <span class="nav-text">实现方案：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-多背景渐变"><span class="nav-number">2.1.</span> <span class="nav-text">1.多背景渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-box-shadow-模拟边框"><span class="nav-number">2.2.</span> <span class="nav-text">2.box-shadow 模拟边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用伪类-before-after-与-transform"><span class="nav-number">2.3.</span> <span class="nav-text">3.使用伪类 :before, :after 与 transform</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -675,10 +689,10 @@
 
 
 
-  
-  
 
 
+  
+  
 
 
 
@@ -708,7 +722,7 @@
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
 
 
   
