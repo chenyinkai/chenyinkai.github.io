@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css,移动端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
+<meta name="keywords" content="css,移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端如何实现1px的细线">
+<meta property="og:url" content="http://chenyinkai.github.io/2017/08/14/H5/lineinphone/index.html">
+<meta property="og:site_name" content="善良的乌贼">
+<meta property="og:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://chenyinkai.github.io/images/borderimg.png">
+<meta property="og:updated_time" content="2018-01-04T08:39:29.448Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端如何实现1px的细线">
+<meta name="twitter:description" content="前言在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。">
+<meta name="twitter:image" content="http://chenyinkai.github.io/images/borderimg.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://chenyinkai.github.io/2017/08/14/H5/lineinphone/"/>
+
+
+
+
+
+  <title>移动端如何实现1px的细线 | 善良的乌贼</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eed82ae5d69976cfc45fa273bcc7bb3e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">善良的乌贼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/08/14/H5/lineinphone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yinkai Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="善良的乌贼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动端如何实现1px的细线</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T10:16:45+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做移动端项目的时候，我们往往需要设置1px的边框，但是border-width:1px;效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。</p>
+<a id="more"></a>
+<h2 id="实现方案："><a href="#实现方案：" class="headerlink" title="实现方案："></a>实现方案：</h2><h3 id="1-使用小数来写"><a href="#1-使用小数来写" class="headerlink" title="1.使用小数来写"></a>1.使用小数来写</h3><blockquote>
+<p>ios8及以上已经支持带小数的值；安卓和ios8以下不兼容。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#999</span> &#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>) &#123;</div><div class="line">    <span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">0.5px</span> solid <span class="number">#999</span> &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">3</span>) &#123;</div><div class="line">    <span class="selector-class">.border</span> &#123; <span class="attribute">border</span>: <span class="number">0.333333px</span> solid <span class="number">#999</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-div补位模拟"><a href="#2-div补位模拟" class="headerlink" title="2.div补位模拟"></a>2.div补位模拟</h3><blockquote>
+<p>手机淘宝使用：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.tb_line</span>&#123;  </div><div class="line">    <span class="attribute">box-sizing</span>: border-box;  </div><div class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;  </div><div class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(239, 239, 239);  </div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;  </div><div class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-使用阴影渐变"><a href="#3-使用阴影渐变" class="headerlink" title="3.使用阴影渐变"></a>3.使用阴影渐变</h3><blockquote>
+<p>使用box-shadow，设置白色阴影偏移实现</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.navTab</span>&#123;  </div><div class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eceef0</span>;  </div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="number">#fff</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-使用伪类-before-after-与-transform"><a href="#4-使用伪类-before-after-与-transform" class="headerlink" title="4.使用伪类 :before, :after 与 transform"></a>4.使用伪类 :before, :after 与 transform</h3><blockquote>
+<p>构建1个伪元素, 将它的长宽放大到2倍, 边框宽度设置为1px, 再以transform缩放到50%.<br>优点: 其实不止是圆角, 其他的边框也可以这样做出来<br>缺点: 代码量也很大, 占据了伪元素, 容易引起冲突</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.radius-border</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>)&#123;</div><div class="line">    <span class="selector-class">.radius-border</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">        <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">        <span class="attribute">pointer-events</span>: none; <span class="comment">/* 防止点击触发 */</span></div><div class="line">        <span class="attribute">box-sizing</span>: border-box;</div><div class="line">        <span class="attribute">position</span>: absolute;</div><div class="line">        <span class="attribute">width</span>: <span class="number">200%</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">200%</span>;</div><div class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</div><div class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#999</span>;</div><div class="line">        -webkit-transform(scale(0.5));</div><div class="line">        <span class="selector-tag">-webkit-transform-origin</span>: 0 0;</div><div class="line">        <span class="selector-tag">transform</span>(<span class="selector-tag">scale</span>(0<span class="selector-class">.5</span>));</div><div class="line">        <span class="selector-tag">transform-origin</span>: 0 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="5-border-image"><a href="#5-border-image" class="headerlink" title="5.border-image"></a>5.border-image</h3><blockquote>
+<p>缺点: 对于圆角样式, 将图片放大修改成圆角也能满足需求, 但这样无形中增加了border的宽度，存在多种边框颜色或者更改的时候麻烦。</p>
+</blockquote>
+<p><img src="/images/borderimg.png" alt="这样的1张6X6的图片, 9宫格等分填充 border-image, 这样元素的 4 个边框宽度都只有 1px."></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio: <span class="number">2</span>)&#123; </div><div class="line">    <span class="selector-class">.border</span>&#123; </div><div class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</div><div class="line">        <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.gif) <span class="number">2</span> repeat;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里只介绍这五种实现1px边框的方式，各种方式都有其优缺点，至于项目中具体使用何种方式，则由项目和开发者自己决定。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/移动端/" rel="tag"># 移动端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/15/wechat/wxParse/" rel="prev" title="微信小程序富文本解析插件--wxParse">
+                微信小程序富文本解析插件--wxParse <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4"
+               alt="Yinkai Chen" />
+          <p class="site-author-name" itemprop="name">Yinkai Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">在一条通往牛逼的路上，我不断狂奔。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chenyinkai" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/chenyinkai" target="_blank" title="segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      segmentfault
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方案："><span class="nav-number">2.</span> <span class="nav-text">实现方案：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用小数来写"><span class="nav-number">2.1.</span> <span class="nav-text">1.使用小数来写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-div补位模拟"><span class="nav-number">2.2.</span> <span class="nav-text">2.div补位模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用阴影渐变"><span class="nav-number">2.3.</span> <span class="nav-text">3.使用阴影渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-使用伪类-before-after-与-transform"><span class="nav-number">2.4.</span> <span class="nav-text">4.使用伪类 :before, :after 与 transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-border-image"><span class="nav-number">2.5.</span> <span class="nav-text">5.border-image</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yinkai Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
