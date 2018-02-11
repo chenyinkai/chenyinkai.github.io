@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="最近想实现一个显示图片加载进度的插件(插件已完成，点这里查看)，就想到使用 Promise.all 方法解决，于是再次了解了下 Promise，本文介绍 Promise 的基本属性和方法">
+<meta name="description" content="在做移动端活动h5时，往往由于图片资源过多，导致页面加载十分缓慢，此时，我们就想，如果可以先将图片预加载完成，并且可以加载进度，图片预加载完成后再跳转活动页，这样用户体验将会好很多。基于这样的需求，就实现了一个图片预加载并可以知道图片加载进度的插件(插件已完成，点这里查看)，主要使用 Promise.all 方法解决，本文介绍 Promise 的基本属性和方法">
 <meta name="keywords" content="javascript,Promise">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Promise">
 <meta property="og:url" content="http://chenyinkai.github.io/2018/02/01/promise/promise/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="最近想实现一个显示图片加载进度的插件(插件已完成，点这里查看)，就想到使用 Promise.all 方法解决，于是再次了解了下 Promise，本文介绍 Promise 的基本属性和方法">
+<meta property="og:description" content="在做移动端活动h5时，往往由于图片资源过多，导致页面加载十分缓慢，此时，我们就想，如果可以先将图片预加载完成，并且可以加载进度，图片预加载完成后再跳转活动页，这样用户体验将会好很多。基于这样的需求，就实现了一个图片预加载并可以知道图片加载进度的插件(插件已完成，点这里查看)，主要使用 Promise.all 方法解决，本文介绍 Promise 的基本属性和方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T03:08:12.669Z">
+<meta property="og:updated_time" content="2018-02-11T09:43:41.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Promise">
-<meta name="twitter:description" content="最近想实现一个显示图片加载进度的插件(插件已完成，点这里查看)，就想到使用 Promise.all 方法解决，于是再次了解了下 Promise，本文介绍 Promise 的基本属性和方法">
+<meta name="twitter:description" content="在做移动端活动h5时，往往由于图片资源过多，导致页面加载十分缓慢，此时，我们就想，如果可以先将图片预加载完成，并且可以加载进度，图片预加载完成后再跳转活动页，这样用户体验将会好很多。基于这样的需求，就实现了一个图片预加载并可以知道图片加载进度的插件(插件已完成，点这里查看)，主要使用 Promise.all 方法解决，本文介绍 Promise 的基本属性和方法">
 
 
 
@@ -382,7 +382,7 @@
       
 
       
-        <p>最近想实现一个显示图片加载进度的插件(<a href="https://github.com/chenyinkai/resloader" target="_blank" rel="external">插件已完成，点这里查看</a>)，就想到使用 <code>Promise.all</code> 方法解决，于是再次了解了下 <code>Promise</code>，本文介绍 <code>Promise</code> 的基本属性和方法<br><a id="more"></a></p>
+        <p>在做移动端活动h5时，往往由于图片资源过多，导致页面加载十分缓慢，此时，我们就想，如果可以先将图片预加载完成，并且可以加载进度，图片预加载完成后再跳转活动页，这样用户体验将会好很多。基于这样的需求，就实现了一个图片预加载并可以知道图片加载进度的插件(<a href="https://github.com/chenyinkai/resloader" target="_blank" rel="external">插件已完成，点这里查看</a>)，主要使用 <code>Promise.all</code> 方法解决，本文介绍 <code>Promise</code> 的基本属性和方法<br><a id="more"></a></p>
 <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
 <p>个人理解就是使用同步编程的写法完成异步编程操作。</p>
 </blockquote>
