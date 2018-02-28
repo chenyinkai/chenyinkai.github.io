@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="web," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="vue开发期间的API代理">
-<meta name="keywords" content="webpack">
+<meta name="description" content="本文主要记录对于 XSS 和 CSRF 的基本概念和防御措施.">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack-proxyTable解决开发环境下跨域问题">
-<meta property="og:url" content="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/index.html">
+<meta property="og:title" content="XSS 和 CSRF">
+<meta property="og:url" content="http://chenyinkai.github.io/2018/02/28/web/XSS-CSRF/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="vue开发期间的API代理">
+<meta property="og:description" content="本文主要记录对于 XSS 和 CSRF 的基本概念和防御措施.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T03:16:36.625Z">
+<meta property="og:updated_time" content="2018-02-28T02:30:58.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack-proxyTable解决开发环境下跨域问题">
-<meta name="twitter:description" content="vue开发期间的API代理">
+<meta name="twitter:title" content="XSS 和 CSRF">
+<meta name="twitter:description" content="本文主要记录对于 XSS 和 CSRF 的基本概念和防御措施.">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/"/>
+  <link rel="canonical" href="http://chenyinkai.github.io/2018/02/28/web/XSS-CSRF/"/>
 
 
 
 
 
-  <title>webpack-proxyTable解决开发环境下跨域问题 | 善良的乌贼</title>
+  <title>XSS 和 CSRF | 善良的乌贼</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/">
+    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2018/02/28/web/XSS-CSRF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yinkai Chen">
@@ -310,7 +310,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">webpack-proxyTable解决开发环境下跨域问题</h2>
+          <h2 class="post-title" itemprop="name headline">XSS 和 CSRF</h2>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T18:24:33+08:00">
-                2017-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T00:00:00+08:00">
+                2018-02-28
               </time>
             
 
@@ -345,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -382,14 +382,47 @@
       
 
       
-        <p><a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">vue开发期间的API代理</a><br><a id="more"></a></p>
-<h3 id="在-config-index-js-下设置"><a href="#在-config-index-js-下设置" class="headerlink" title="在 config/index.js 下设置"></a>在 config/index.js 下设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/list'</span>: &#123;</div><div class="line">    target: <span class="string">'http://api.xxxx.cn'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/list'</span>: <span class="string">'/'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><blockquote>
-<p>例如我们需要请求 <a href="http://api.xxxx.cn/orderList/detail" target="_blank" rel="external">http://api.xxxx.cn/orderList/detail</a>;</p>
-<p>在写 url 时只需要写成 /list/orderList/detail 即可</p>
+        <p>本文主要记录对于 <code>XSS</code> 和 <code>CSRF</code> 的基本概念和防御措施.<br><a id="more"></a></p>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p><code>Cross Site Scripting</code>, 跨站脚本攻击, 主要来源于HTML或JS的代码注入</p>
 </blockquote>
-<h3 id="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"><a href="#vue-cli的这个设置来自于其使用的插件http-proxy-middleware" class="headerlink" title="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"></a>vue-cli的这个设置来自于其使用的插件http-proxy-middleware</h3><p><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">插件github</a></p>
+<p>XSS类型分为3种, 反射型XSS, 存储型XSS, DOM-XSS。</p>
+<ul>
+<li><p>反射型XSS</p>
+<blockquote>
+<p>直接将用户的输入数据展示到页面中, 后台不保存数据, 属于非持久型 <code>XSS</code></p>
+</blockquote>
+</li>
+<li><p>存储型XSS</p>
+<blockquote>
+<p>将用户的输入数据不经过处理直接保存到数据库中, 此时其他用户只要请求数据, 返回的都是 <code>XSS</code> 脚本, 属于持久型 <code>XSS</code></p>
+</blockquote>
+</li>
+<li><p>DOM-XSS</p>
+<blockquote>
+<p>修改页面 <code>DOM</code> 形成 <code>XSS</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h3><ul>
+<li>永远不要相信用户的输入, 对用户输入数据进行过滤</li>
+<li>字符转义</li>
+<li>设置 <code>HttpOnly</code> 防止劫取 <code>Cookie</code></li>
+</ul>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p><code>Cross Site Request Forgery</code>, 跨站请求伪造, 其原理是借助受害者的 <code>cookie</code> 来骗取服务器的信任, 发出了非用户本意的请求</p>
+</blockquote>
+<h3 id="防御措施-1"><a href="#防御措施-1" class="headerlink" title="防御措施"></a>防御措施</h3><ul>
+<li><p>检查 <code>HTTP Referer</code> 字段</p>
+<blockquote>
+<p><code>Referer</code> 用于表示请求来源于哪个地址, 对于非白名单内的来源地址, 都忽略请求</p>
+</blockquote>
+</li>
+<li><p>添加 <code>TOKEN</code> 验证</p>
+</li>
+</ul>
+<p>参考</p>
+<p><a href="https://xwjgo.github.io/2017/10/26/XSS%E5%92%8CCSRF/" target="_blank" rel="external">https://xwjgo.github.io/2017/10/26/XSS%E5%92%8CCSRF/</a><br><a href="http://www.cnblogs.com/imwtr/p/4763457.html" target="_blank" rel="external">http://www.cnblogs.com/imwtr/p/4763457.html</a></p>
 
       
     </div>
@@ -407,7 +440,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
+            <a href="/tags/web/" rel="tag"># web</a>
           
         </div>
       
@@ -420,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/22/vue/swiperInVue/" rel="next" title="vue项目中使用swiper遇到的一些坑">
-                <i class="fa fa-chevron-left"></i> vue项目中使用swiper遇到的一些坑
+              <a href="/2018/02/26/questions/git-push/" rel="next" title="push到github远程仓库时，每次都要输入用户名和密码的问题">
+                <i class="fa fa-chevron-left"></i> push到github远程仓库时，每次都要输入用户名和密码的问题
               </a>
             
           </div>
@@ -429,10 +462,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/25/H5/quesInHtml5/" rel="prev" title="移动端H5页面开发过程中遇到的问题">
-                移动端H5页面开发过程中遇到的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-config-index-js-下设置"><span class="nav-number">1.</span> <span class="nav-text">在 config/index.js 下设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-cli的这个设置来自于其使用的插件http-proxy-middleware"><span class="nav-number">3.</span> <span class="nav-text">vue-cli的这个设置来自于其使用的插件http-proxy-middleware</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS"><span class="nav-number">1.</span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防御措施"><span class="nav-number">1.2.</span> <span class="nav-text">防御措施</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF"><span class="nav-number">2.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防御措施-1"><span class="nav-number">2.2.</span> <span class="nav-text">防御措施</span></a></li></ol></li></ol></div>
             
 
           </div>

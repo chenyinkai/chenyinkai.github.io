@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="blog" />
 
 
 
@@ -94,18 +94,16 @@
 
 
 
-<meta name="description" content="vue开发期间的API代理">
-<meta name="keywords" content="webpack">
-<meta property="og:type" content="article">
-<meta property="og:title" content="webpack-proxyTable解决开发环境下跨域问题">
-<meta property="og:url" content="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/index.html">
+<meta name="description" content="在一条通往牛逼的路上，我不断狂奔。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="善良的乌贼">
+<meta property="og:url" content="http://chenyinkai.github.io/tags/web/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="vue开发期间的API代理">
+<meta property="og:description" content="在一条通往牛逼的路上，我不断狂奔。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T03:16:36.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack-proxyTable解决开发环境下跨域问题">
-<meta name="twitter:description" content="vue开发期间的API代理">
+<meta name="twitter:title" content="善良的乌贼">
+<meta name="twitter:description" content="在一条通往牛逼的路上，我不断狂奔。">
 
 
 
@@ -134,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/"/>
+  <link rel="canonical" href="http://chenyinkai.github.io/tags/web/"/>
 
 
 
 
 
-  <title>webpack-proxyTable解决开发环境下跨域问题 | 善良的乌贼</title>
+  <title>标签: web | 善良的乌贼</title>
   
 
 
@@ -175,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,180 +277,54 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>web<small>标签</small>
+        </h2>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yinkai Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="善良的乌贼">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
+            <a class="post-title-link" href="/2018/02/28/web/XSS-CSRF/" itemprop="url">
+              
+                <span itemprop="name">XSS 和 CSRF</span>
+              
+            </a>
         
-          <h2 class="post-title" itemprop="name headline">webpack-proxyTable解决开发环境下跨域问题</h2>
-        
+      </h3>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T18:24:33+08:00">
-                2017-08-28
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-28T00:00:00+08:00"
+              content="2018-02-28" >
+          02-28
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">vue开发期间的API代理</a><br><a id="more"></a></p>
-<h3 id="在-config-index-js-下设置"><a href="#在-config-index-js-下设置" class="headerlink" title="在 config/index.js 下设置"></a>在 config/index.js 下设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/list'</span>: &#123;</div><div class="line">    target: <span class="string">'http://api.xxxx.cn'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/list'</span>: <span class="string">'/'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>changeOrigin参数，接收一个布尔值，如果设置为true,那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><blockquote>
-<p>例如我们需要请求 <a href="http://api.xxxx.cn/orderList/detail" target="_blank" rel="external">http://api.xxxx.cn/orderList/detail</a>;</p>
-<p>在写 url 时只需要写成 /list/orderList/detail 即可</p>
-</blockquote>
-<h3 id="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"><a href="#vue-cli的这个设置来自于其使用的插件http-proxy-middleware" class="headerlink" title="vue-cli的这个设置来自于其使用的插件http-proxy-middleware"></a>vue-cli的这个设置来自于其使用的插件http-proxy-middleware</h3><p><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">插件github</a></p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/08/22/vue/swiperInVue/" rel="next" title="vue项目中使用swiper遇到的一些坑">
-                <i class="fa fa-chevron-left"></i> vue项目中使用swiper遇到的一些坑
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/25/H5/quesInHtml5/" rel="prev" title="移动端H5页面开发过程中遇到的问题">
-                移动端H5页面开发过程中遇到的问题 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -460,10 +332,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -484,17 +352,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4"
@@ -591,22 +450,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-config-index-js-下设置"><span class="nav-number">1.</span> <span class="nav-text">在 config/index.js 下设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-cli的这个设置来自于其使用的插件http-proxy-middleware"><span class="nav-number">3.</span> <span class="nav-text">vue-cli的这个设置来自于其使用的插件http-proxy-middleware</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -736,10 +579,10 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-
+  
 
   
 
