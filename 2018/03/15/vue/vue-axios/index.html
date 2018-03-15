@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="在页面布局中最常见的的就是居中了，本文介绍几种居中 div 的方法">
-<meta name="keywords" content="css">
+<meta name="description" content="使用 vue-cli 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="div居中方法">
-<meta property="og:url" content="http://chenyinkai.github.io/2016/12/02/css/mediacy-div/index.html">
+<meta property="og:title" content="vue-cli 搭建的项目处理不同环境请求不同域名的问题">
+<meta property="og:url" content="http://chenyinkai.github.io/2018/03/15/vue/vue-axios/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="在页面布局中最常见的的就是居中了，本文介绍几种居中 div 的方法">
+<meta property="og:description" content="使用 vue-cli 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T03:39:34.912Z">
+<meta property="og:updated_time" content="2018-03-15T04:02:46.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="div居中方法">
-<meta name="twitter:description" content="在页面布局中最常见的的就是居中了，本文介绍几种居中 div 的方法">
+<meta name="twitter:title" content="vue-cli 搭建的项目处理不同环境请求不同域名的问题">
+<meta name="twitter:description" content="使用 vue-cli 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyinkai.github.io/2016/12/02/css/mediacy-div/"/>
+  <link rel="canonical" href="http://chenyinkai.github.io/2018/03/15/vue/vue-axios/"/>
 
 
 
 
 
-  <title>div居中方法 | 善良的乌贼</title>
+  <title>vue-cli 搭建的项目处理不同环境请求不同域名的问题 | 善良的乌贼</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2016/12/02/css/mediacy-div/">
+    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2018/03/15/vue/vue-axios/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yinkai Chen">
@@ -310,7 +310,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">div居中方法</h2>
+          <h2 class="post-title" itemprop="name headline">vue-cli 搭建的项目处理不同环境请求不同域名的问题</h2>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-02T09:12:00+08:00">
-                2016-12-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T00:00:00+08:00">
+                2018-03-15
               </time>
             
 
@@ -345,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -382,15 +382,39 @@
       
 
       
-        <p>在页面布局中最常见的的就是居中了，本文介绍几种居中 <code>div</code> 的方法<br><a id="more"></a></p>
-<h2 id="已知宽度水平居中"><a href="#已知宽度水平居中" class="headerlink" title="已知宽度水平居中"></a>已知宽度水平居中</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line"> 	<span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line"> 	<span class="attribute">margin</span>:<span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="水平垂直居中-已知宽高"><a href="#水平垂直居中-已知宽高" class="headerlink" title="水平垂直居中-已知宽高"></a>水平垂直居中-已知宽高</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">	<span class="attribute">margin</span>: auto;</div><div class="line">	<span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">	<span class="attribute">background-color</span>: pink;	<span class="comment">/* 方便看效果 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="水平垂直居中-已知宽高-1"><a href="#水平垂直居中-已知宽高-1" class="headerlink" title="水平垂直居中 - 已知宽高"></a>水平垂直居中 - 已知宽高</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line"> 	<span class="attribute">position</span>: absolute;</div><div class="line"> 	<span class="attribute">width</span>:<span class="number">500px</span>;</div><div class="line"> 	<span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line"> 	<span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line"> 	<span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line"> 	<span class="attribute">margin</span>: -<span class="number">150px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">250px</span>;     	<span class="comment">/* 外边距为自身宽高的一半 */</span></div><div class="line"> 	<span class="attribute">background-color</span>: pink;	 	<span class="comment">/* 方便看效果 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="水平垂直居中-宽高不确定"><a href="#水平垂直居中-宽高不确定" class="headerlink" title="水平垂直居中-宽高不确定"></a>水平垂直居中-宽高不确定</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line"> 	<span class="attribute">position</span>: absolute;</div><div class="line"> 	<span class="attribute">width</span>:<span class="number">500px</span>;</div><div class="line"> 	<span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line"> 	<span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line"> 	<span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line"> 	<span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</div><div class="line"> 	<span class="attribute">background-color</span>: pink;	 	<span class="comment">/* 方便看效果 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="水平垂直居中-未知宽高"><a href="#水平垂直居中-未知宽高" class="headerlink" title="水平垂直居中 - 未知宽高"></a>水平垂直居中 - 未知宽高</h2><blockquote>
-<p>flex 布局 实际使用时应考虑兼容性</p>
+        <p>使用 <code>vue-cli</code> 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.<br><a id="more"></a></p>
+<blockquote>
+<p>本文中所有请求都是使用 <a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a></p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">	<span class="attribute">display</span>: flex;</div><div class="line">	<span class="attribute">align-items</span>: center; 		<span class="comment">/* 垂直居中 */</span></div><div class="line">	<span class="attribute">justify-content</span>: center;	<span class="comment">/* 水平居中 */</span></div><div class="line"></div><div class="line">&#125;</div><div class="line">.container div &#123; c</div><div class="line">	<span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>;</div><div class="line">	<span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</div><div class="line">	<span class="selector-tag">background-color</span>: <span class="selector-tag">pink</span>;		<span class="comment">/* 方便看效果 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><blockquote>
+<ol>
+<li>修改 <code>config/dev.env.js</code> (开发环境的配置)</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"><span class="keyword">const</span> prodEnv = <span class="built_in">require</span>(<span class="string">'./prod.env'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = merge(prodEnv, &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  API_HOST: <span class="string">'"http://localhost:3000"'</span> <span class="comment">// 开发环境接口地址(这里是增加的内容)</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>修改 <code>config/prod.env.js</code> (正式环境的配置)</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_HOST: <span class="string">'"http://localhost:3000"'</span>  <span class="comment">// 正式环境接口地址(这里是增加的内容)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>使用 <code>axios</code> 发送请求</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axios.get(process.env.API_HOST + <span class="string">'/api/userData'</span>) <span class="comment">// 请求前加上 `process.env.API_HOST`</span></span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><blockquote>
+<p>第二种方法主要使用 <code>axios</code> 的创建实例的用法</p>
+</blockquote>
+<blockquote>
+<p>在 <code>main.js</code> 配置 <code>axios</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> host = process.env.NODE_ENV === <span class="string">'development'</span> ? <span class="string">'dev api host'</span> : <span class="string">'prod api host'</span> <span class="comment">// 根据 process.env.NODE_ENV 的值判断当前是什么环境</span></span><br><span class="line"><span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">  baseURL: host</span><br><span class="line">&#125;)</span><br><span class="line">Vue.prototype.$http = instance</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在组件中调用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$http.get(<span class="string">'/api/userData'</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -407,7 +431,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -420,15 +444,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/02/28/web/XSS-CSRF/" rel="next" title="XSS 和 CSRF">
+                <i class="fa fa-chevron-left"></i> XSS 和 CSRF
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/10/util/fiddler-https/" rel="prev" title="Fiddler 4 捕获 https 请求">
-                Fiddler 4 捕获 https 请求 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -597,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#已知宽度水平居中"><span class="nav-number">1.</span> <span class="nav-text">已知宽度水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平垂直居中-已知宽高"><span class="nav-number">2.</span> <span class="nav-text">水平垂直居中-已知宽高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平垂直居中-已知宽高-1"><span class="nav-number">3.</span> <span class="nav-text">水平垂直居中 - 已知宽高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平垂直居中-宽高不确定"><span class="nav-number">4.</span> <span class="nav-text">水平垂直居中-宽高不确定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平垂直居中-未知宽高"><span class="nav-number">5.</span> <span class="nav-text">水平垂直居中 - 未知宽高</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一"><span class="nav-number">1.</span> <span class="nav-text">一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二"><span class="nav-number">2.</span> <span class="nav-text">二</span></a></li></ol></div>
             
 
           </div>
