@@ -97,14 +97,14 @@
 <meta name="description" content="使用 vue-cli 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-cli 搭建的项目处理不同环境请求不同域名的问题">
+<meta property="og:title" content="vue-cli 搭建的项目处理不同环境下请求不同域名的问题">
 <meta property="og:url" content="http://chenyinkai.github.io/2018/03/15/vue/vue-axios/index.html">
 <meta property="og:site_name" content="善良的乌贼">
 <meta property="og:description" content="使用 vue-cli 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T04:02:46.936Z">
+<meta property="og:updated_time" content="2018-03-15T05:26:26.288Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-cli 搭建的项目处理不同环境请求不同域名的问题">
+<meta name="twitter:title" content="vue-cli 搭建的项目处理不同环境下请求不同域名的问题">
 <meta name="twitter:description" content="使用 vue-cli 开发项目过程中, 根据开发环境和正式环境不同, 我们往往需要请求不同域名下的后台接口, 这时候, 该怎么去设置, 达到同一种写法可以根据环境不同而自动切换请求域名呢? 本文将会介绍两种配置方式.">
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>vue-cli 搭建的项目处理不同环境请求不同域名的问题 | 善良的乌贼</title>
+  <title>vue-cli 搭建的项目处理不同环境下请求不同域名的问题 | 善良的乌贼</title>
   
 
 
@@ -310,7 +310,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">vue-cli 搭建的项目处理不同环境请求不同域名的问题</h2>
+          <h2 class="post-title" itemprop="name headline">vue-cli 搭建的项目处理不同环境下请求不同域名的问题</h2>
         
 
         <div class="post-meta">
@@ -397,7 +397,7 @@
 <li>修改 <code>config/prod.env.js</code> (正式环境的配置)</li>
 </ol>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_HOST: <span class="string">'"http://localhost:3000"'</span>  <span class="comment">// 正式环境接口地址(这里是增加的内容)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  API_HOST: <span class="string">'"http://localhost:8888"'</span>  <span class="comment">// 正式环境接口地址(这里是增加的内容)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
 <li>使用 <code>axios</code> 发送请求</li>
@@ -453,6 +453,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/20/vue/vue-router-mode/" rel="prev" title="vue-router 的两种模式">
+                vue-router 的两种模式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
