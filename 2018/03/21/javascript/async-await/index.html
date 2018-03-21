@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="javascript,ES6," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="点击这里，你可以查看浏览器对于 flex 的支持程度。本文主要介绍和 flex 相关的属性。">
-<meta name="keywords" content="css">
+<meta name="description" content="本文主要介绍 async await, ES7 新加的一种更为优雅的处理异步的方式。">
+<meta name="keywords" content="javascript,ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flex弹性盒布局">
-<meta property="og:url" content="http://chenyinkai.github.io/2017/08/16/css/flex/index.html">
+<meta property="og:title" content="更优雅的处理异步方式--async await">
+<meta property="og:url" content="http://chenyinkai.github.io/2018/03/21/javascript/async-await/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="点击这里，你可以查看浏览器对于 flex 的支持程度。本文主要介绍和 flex 相关的属性。">
+<meta property="og:description" content="本文主要介绍 async await, ES7 新加的一种更为优雅的处理异步的方式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-10T02:19:54.626Z">
+<meta property="og:updated_time" content="2018-03-21T12:46:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flex弹性盒布局">
-<meta name="twitter:description" content="点击这里，你可以查看浏览器对于 flex 的支持程度。本文主要介绍和 flex 相关的属性。">
+<meta name="twitter:title" content="更优雅的处理异步方式--async await">
+<meta name="twitter:description" content="本文主要介绍 async await, ES7 新加的一种更为优雅的处理异步的方式。">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyinkai.github.io/2017/08/16/css/flex/"/>
+  <link rel="canonical" href="http://chenyinkai.github.io/2018/03/21/javascript/async-await/"/>
 
 
 
 
 
-  <title>flex弹性盒布局 | 善良的乌贼</title>
+  <title>更优雅的处理异步方式--async await | 善良的乌贼</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/08/16/css/flex/">
+    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2018/03/21/javascript/async-await/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yinkai Chen">
@@ -310,7 +310,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">flex弹性盒布局</h2>
+          <h2 class="post-title" itemprop="name headline">更优雅的处理异步方式--async await</h2>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T15:05:58+08:00">
-                2017-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T00:00:00+08:00">
+                2018-03-21
               </time>
             
 
@@ -345,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -382,88 +382,18 @@
       
 
       
-        <p>点击<a href="http://caniuse.com/#search=flex" target="_blank" rel="external">这里</a>，你可以查看浏览器对于 flex 的支持程度。<br>本文主要介绍和 <code>flex</code> 相关的属性。<br><a id="more"></a></p>
-<ol>
-<li>所有的属性分为两类：父容器的属性和子项的属性</li>
-<li>所有的属性值几乎都和排列、对齐、占地面积3类特性相关</li>
-</ol>
-<h2 id="父容器属性"><a href="#父容器属性" class="headerlink" title="父容器属性"></a>父容器属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-<th>分类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>flex-direction</td>
-<td>定义子项在容器内的排列方向</td>
-<td>排列</td>
-</tr>
-<tr>
-<td>flex-wrap</td>
-<td>定义子项在容器内的换行效果</td>
-<td>排列</td>
-</tr>
-<tr>
-<td>flex-flow</td>
-<td>flex-direction和flex-wrap的复合属性</td>
-<td>排列</td>
-</tr>
-<tr>
-<td>justify-content</td>
-<td>定义子项在容器内水平对齐方式</td>
-<td>对齐</td>
-</tr>
-<tr>
-<td>align-items</td>
-<td>定义 子项在容器内垂直对齐方式</td>
-<td>对齐</td>
-</tr>
-<tr>
-<td>align-content</td>
-<td>定义多行子项在容器内整体垂直对齐方式</td>
-<td>对齐</td>
-</tr>
-</tbody>
-</table>
-<h2 id="子项属性"><a href="#子项属性" class="headerlink" title="子项属性"></a>子项属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-<th>分类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order</td>
-<td>定义子项们的排列顺序</td>
-<td>排列</td>
-</tr>
-<tr>
-<td>flex-grow</td>
-<td>定义子项宽度之和不足父元素宽度时，子项拉伸的比例</td>
-<td>占地面积</td>
-</tr>
-<tr>
-<td>flex-shrink</td>
-<td>定义子项宽度之和超过父元素宽度时，子项缩放的比例</td>
-<td>占地面积</td>
-</tr>
-<tr>
-<td>flex-basis</td>
-<td>定义初始宽度，若子项宽度之和超过父元素宽度时，子项按照flex-basis的比例缩放</td>
-<td>占地面积</td>
-</tr>
-<tr>
-<td>align-self</td>
-<td>定义单个子项与其他项目不一样的对齐方式</td>
-<td>对齐</td>
-</tr>
-</tbody>
-</table>
+        <p>本文主要介绍 <code>async</code> <code>await</code>, ES7 新加的一种更为优雅的处理异步的方式。<br><a id="more"></a></p>
+<h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><blockquote>
+<p>表示函数中存在异步操作</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">name</span>(<span class="params">params</span>) </span>&#123;</span><br><span class="line">  statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><blockquote>
+<p><code>await</code> 只能在 <code>async</code> 函数中使用, 表示需要等待后面的表达式返回结果</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">returnValue = <span class="keyword">await</span> expression</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong> <code>await</code> 后面的 <code>Promise</code> 有可能返回的是 <code>rejected</code>, 所以最好把 <code>await</code> 放在 <code>try···catch</code> 中, 方便错误处理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">await</span> expression</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'status:resolve'</span>)</span><br><span class="line">      resolve(<span class="string">'resolve'</span>)</span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'asyncfn start'</span>)</span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">await</span> test()</span><br><span class="line">  <span class="built_in">console</span>.log(result)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span>()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testFn</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(x)</span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncFn</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="keyword">await</span> testFn(<span class="number">10</span>)</span><br><span class="line">  <span class="keyword">let</span> b = <span class="keyword">await</span> testFn(<span class="number">20</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;x&#125;</span>+<span class="subst">$&#123;a&#125;</span>+<span class="subst">$&#123;b&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asyncFn(<span class="number">30</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'asycnFn finished'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -481,7 +411,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -494,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/15/wechat/wxParse/" rel="next" title="微信小程序富文本解析插件--wxParse">
-                <i class="fa fa-chevron-left"></i> 微信小程序富文本解析插件--wxParse
+              <a href="/2018/03/20/vue/vue-router-mode/" rel="next" title="vue-router 的两种模式">
+                <i class="fa fa-chevron-left"></i> vue-router 的两种模式
               </a>
             
           </div>
@@ -503,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/22/vue/swiperInVue/" rel="prev" title="vue项目中使用swiper遇到的一些坑">
-                vue项目中使用swiper遇到的一些坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -675,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#父容器属性"><span class="nav-number">1.</span> <span class="nav-text">父容器属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子项属性"><span class="nav-number">2.</span> <span class="nav-text">子项属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#async"><span class="nav-number">1.</span> <span class="nav-text">async</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#await"><span class="nav-number">2.</span> <span class="nav-text">await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#demo"><span class="nav-number">3.</span> <span class="nav-text">demo</span></a></li></ol></div>
             
 
           </div>
