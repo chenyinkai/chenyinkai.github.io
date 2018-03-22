@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog" />
+  <meta name="keywords" content="http," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="在一条通往牛逼的路上，我不断狂奔">
-<meta property="og:type" content="website">
-<meta property="og:title" content="善良的乌贼">
-<meta property="og:url" content="http://chenyinkai.github.io/page/4/index.html">
+<meta name="description" content="本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。">
+<meta name="keywords" content="http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http状态码 200(From Cache)和 304(Not Modified)的区别">
+<meta property="og:url" content="http://chenyinkai.github.io/2018/03/21/web/200-304/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="在一条通往牛逼的路上，我不断狂奔">
+<meta property="og:description" content="本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-22T04:59:03.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="善良的乌贼">
-<meta name="twitter:description" content="在一条通往牛逼的路上，我不断狂奔">
+<meta name="twitter:title" content="http状态码 200(From Cache)和 304(Not Modified)的区别">
+<meta name="twitter:description" content="本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyinkai.github.io/page/4/"/>
+  <link rel="canonical" href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
 
 
 
 
 
-  <title>善良的乌贼</title>
+  <title>http状态码 200(From Cache)和 304(Not Modified)的区别 | 善良的乌贼</title>
   
 
 
@@ -173,9 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,9 +278,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/08/15/wechat/wxParse/">
+    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2018/03/21/web/200-304/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yinkai Chen">
@@ -310,9 +310,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/15/wechat/wxParse/" itemprop="url">微信小程序富文本解析插件--wxParse</a></h2>
+          <h2 class="post-title" itemprop="name headline">http状态码 200(From Cache)和 304(Not Modified)的区别</h2>
         
 
         <div class="post-meta">
@@ -324,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T16:49:25+08:00">
-                2017-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T00:00:00+08:00">
+                2018-03-21
               </time>
             
 
@@ -347,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">小程序</span>
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
                   </a>
                 </span>
 
@@ -384,16 +382,18 @@
       
 
       
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在写小程序的时候，碰到数据中带有html标签，<br><img src="/images/wxParse.png" alt="">，小程序中又没有类似于 v-html 指令可以解析html文本，这时候，wxParse的作用就体现出来了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/15/wechat/wxParse/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。<br><a id="more"></a></p>
+<h3 id="200-From-Cache-和-304-Not-Modified-的区别"><a href="#200-From-Cache-和-304-Not-Modified-的区别" class="headerlink" title="200(From Cache) 和 304(Not Modified) 的区别"></a><code>200(From Cache)</code> 和 <code>304(Not Modified)</code> 的区别</h3><blockquote>
+<p><code>200(From Cache)</code> 是指下次加载的资源直接从浏览器的缓存中读取，并没有请求服务端</p>
+</blockquote>
+<blockquote>
+<p><code>304(Not Modified)</code> 当页面刷新或者重新打开的时候，先请求服务端，如果本地缓存的资源没有修改或者更新，则返回 <code>304</code>,加载本地的资源</p>
+</blockquote>
+<blockquote>
+<p><code>Last-Modified</code></p>
+</blockquote>
+<p>浏览器第一次请求资源时，同时有一个 <code>Last-Modified</code> 的属性标记此文件在服务期端最后被修改的时间, 类似于 <code>Last-Modified: Fri, 12 May 2006 18:53:33 GMT</code> 这种格式, 当浏览器第二次再发起请求时, 浏览器会传递一个 <code>If-Modified-Since</code> 报头, 类似于 <code>If-Modified-Since: Fri, 12 May 2006 18:53:33 GMT</code> 这样, 如果服务端的资源没有修改过, 则返回 <code>304(Not Modified)</code></p>
+
       
     </div>
     
@@ -408,306 +408,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/08/14/H5/lineinphone/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yinkai Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="善良的乌贼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/14/H5/lineinphone/" itemprop="url">移动端如何实现1px的细线</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T10:16:45+08:00">
-                2017-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/http/" rel="tag"># http</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做移动端项目的时候，我们往往需要设置1px的边框，但是 <code>border-width:1px;</code> 效果出来的边框却往往比1px要粗。本文主要介绍移动端实现1px边框的几种实现方案。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/14/H5/lineinphone/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/21/javascript/async-await/" rel="next" title="更优雅的处理异步方式--async await">
+                <i class="fa fa-chevron-left"></i> 更优雅的处理异步方式--async await
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/04/10/util/fiddler-https/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yinkai Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="善良的乌贼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/util/fiddler-https/" itemprop="url">Fiddler 4 捕获 https 请求</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T00:00:00+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/util/" itemprop="url" rel="index">
-                    <span itemprop="name">util</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><code>Fiddler</code> 是一个功能强大的抓包工具。本文将会介绍如何使用 <code>Fiddler 4</code> 捕获 <code>https</code> 请求</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/10/util/fiddler-https/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -717,160 +447,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2016/12/02/css/mediacy-div/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yinkai Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="善良的乌贼">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/02/css/mediacy-div/" itemprop="url">div居中方法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-02T09:12:00+08:00">
-                2016-12-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在页面布局中最常见的的就是居中了，本文介绍几种居中 <code>div</code> 的方法<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/02/css/mediacy-div/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
 
 
           </div>
@@ -878,6 +459,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -898,8 +483,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4"
@@ -914,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -925,7 +519,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -936,7 +530,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -996,6 +590,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#200-From-Cache-和-304-Not-Modified-的区别"><span class="nav-number">1.</span> <span class="nav-text">200(From Cache) 和 304(Not Modified) 的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1125,10 +735,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
