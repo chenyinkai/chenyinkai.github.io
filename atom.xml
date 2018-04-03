@@ -58,6 +58,26 @@
   </entry>
   
   <entry>
+    <title>http状态码 200(From Cache)和 304(Not Modified)的区别</title>
+    <link href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
+    <id>http://chenyinkai.github.io/2018/03/21/web/200-304/</id>
+    <published>2018-03-20T16:00:00.000Z</published>
+    <updated>2018-03-22T04:59:03.499Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="http" scheme="http://chenyinkai.github.io/categories/http/"/>
+    
+    
+      <category term="http" scheme="http://chenyinkai.github.io/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
     <title>更优雅的处理异步方式--async await</title>
     <link href="http://chenyinkai.github.io/2018/03/21/javascript/async-await/"/>
     <id>http://chenyinkai.github.io/2018/03/21/javascript/async-await/</id>
@@ -76,26 +96,6 @@
       <category term="javascript" scheme="http://chenyinkai.github.io/tags/javascript/"/>
     
       <category term="ES6" scheme="http://chenyinkai.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>http状态码 200(From Cache)和 304(Not Modified)的区别</title>
-    <link href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
-    <id>http://chenyinkai.github.io/2018/03/21/web/200-304/</id>
-    <published>2018-03-20T16:00:00.000Z</published>
-    <updated>2018-03-22T04:59:03.499Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="http" scheme="http://chenyinkai.github.io/categories/http/"/>
-    
-    
-      <category term="http" scheme="http://chenyinkai.github.io/tags/http/"/>
     
   </entry>
   

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="之前我们已经对父子组件之间的通信有了一定的理解 #22 ,那么对于非父子组件之间的通信该如何实现呢？">
-<meta name="keywords" content="vue">
+<meta name="description" content="本文主要介绍图片上传以及压缩。">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue非父子组件通信">
-<meta property="og:url" content="http://chenyinkai.github.io/2018/01/13/vue/vue-eventbus/index.html">
+<meta property="og:title" content="图片上传以及压缩">
+<meta property="og:url" content="http://chenyinkai.github.io/2017/03/21/javascript/img-upload/index.html">
 <meta property="og:site_name" content="善良的乌贼">
-<meta property="og:description" content="之前我们已经对父子组件之间的通信有了一定的理解 #22 ,那么对于非父子组件之间的通信该如何实现呢？">
+<meta property="og:description" content="本文主要介绍图片上传以及压缩。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T05:02:47.366Z">
+<meta property="og:updated_time" content="2018-04-03T12:46:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue非父子组件通信">
-<meta name="twitter:description" content="之前我们已经对父子组件之间的通信有了一定的理解 #22 ,那么对于非父子组件之间的通信该如何实现呢？">
+<meta name="twitter:title" content="图片上传以及压缩">
+<meta name="twitter:description" content="本文主要介绍图片上传以及压缩。">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://chenyinkai.github.io/2018/01/13/vue/vue-eventbus/"/>
+  <link rel="canonical" href="http://chenyinkai.github.io/2017/03/21/javascript/img-upload/"/>
 
 
 
 
 
-  <title>vue非父子组件通信 | 善良的乌贼</title>
+  <title>图片上传以及压缩 | 善良的乌贼</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2018/01/13/vue/vue-eventbus/">
+    <link itemprop="mainEntityOfPage" href="http://chenyinkai.github.io/2017/03/21/javascript/img-upload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yinkai Chen">
@@ -312,7 +312,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">vue非父子组件通信</h2>
+          <h2 class="post-title" itemprop="name headline">图片上传以及压缩</h2>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T00:00:00+08:00">
-                2018-01-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T00:00:00+08:00">
+                2017-03-21
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -384,25 +384,19 @@
       
 
       
-        <p>之前我们已经对父子组件之间的通信有了一定的理解 #22 ,那么对于非父子组件之间的通信该如何实现呢？<br><a id="more"></a></p>
-<h3 id="Event-Bus"><a href="#Event-Bus" class="headerlink" title="Event Bus"></a>Event Bus</h3><p>首先, 新建一个 <code>bus.js</code>, 使用一个空的 <code>Vue</code> 实例作为事件总线</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
-<p>再新建两个组件：</p>
+        <p>本文主要介绍图片上传以及压缩。<br><a id="more"></a></p>
 <blockquote>
-<p><code>a</code> 组件</p>
+<p>上传图片按钮</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;aa&quot;&gt;</span><br><span class="line">	&#123;&#123;msg&#125;&#125;</span><br><span class="line">	&lt;button @click=&quot;toBus&quot;&gt;子组件传给兄弟组件&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Bus from &quot;../bus&quot;;// 引入bus.js</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;aa&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &quot;this is aa component&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toBus() &#123;</span><br><span class="line">      Bus.$emit(&quot;on&quot;, &quot;data from aa component&quot;);// 发送 `on` 事件</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"img"</span> <span class="attr">id</span>=<span class="string">"imgUpload"</span> <span class="attr">accept</span>=<span class="string">"image/jpeg, image/png, image/jpg, image/gif"</span> <span class="attr">onchange</span>=<span class="string">"uploadImg(this)"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>b</code> 组件</p>
+<p>图片上传</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;bb&quot;&gt;</span><br><span class="line">      &#123;&#123;msg&#125;&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Bus from &quot;../bus&quot;;// 引入bus.js</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;bb&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &quot;this is bb component&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    Bus.$on(&quot;on&quot;, msg =&gt; &#123; // 监听 `on` 事件</span><br><span class="line">      this.msg = msg;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>最后将 <code>a</code> , <code>b</code> 组件展示出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;hello&quot;&gt;</span><br><span class="line">    &lt;A&gt;&lt;/A&gt;</span><br><span class="line">    &lt;B&gt;&lt;/B&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import A from &apos;./a.vue&apos;</span><br><span class="line">import B from &apos;./b.vue&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;HelloWorld&apos;,</span><br><span class="line">  components:&#123;</span><br><span class="line">    A,</span><br><span class="line">    B</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>此时点击 <code>a</code> 组件中的按钮，就会发现 <code>b</code> 中的 <code>msg</code> 变成了 <code>data from aa component</code></p>
-<h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h3><blockquote>
-<p>在复杂情况下, 就应该考虑使用 <code>vuex</code> 来管理状态了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uploadImg</span>(<span class="params">imgUrl</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//判断是否支持FileReader</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.FileReader) &#123;</span><br><span class="line">        <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(<span class="string">"您的设备不支持图片预览功能，如需该功能请升级您的设备！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取文件</span></span><br><span class="line">    <span class="keyword">var</span> file = imgUrl.files[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> picType = file.name.substring(file.name.lastIndexOf(<span class="string">"."</span>) + <span class="number">1</span>, file.name.length); <span class="comment">//获取图片的后缀名</span></span><br><span class="line">    <span class="keyword">var</span> imageType = <span class="regexp">/^image\//</span>;</span><br><span class="line">    <span class="comment">//是否是图片</span></span><br><span class="line">    <span class="keyword">if</span> (!imageType.test(file.type)) &#123;</span><br><span class="line">        alert(<span class="string">"请选择图片！"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//读取完成</span></span><br><span class="line">    reader.onload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e.target.result)</span><br><span class="line">    &#125;;</span><br><span class="line">    reader.readAsDataURL(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>图片压缩</p>
 </blockquote>
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> tCanvas = <span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>);</span><br><span class="line"><span class="keyword">var</span> tctx = tCanvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="keyword">var</span> maxsize = <span class="number">100</span> * <span class="number">1024</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数 img 为 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAE..."&gt; 这种格式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compress</span>(<span class="params">img</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> initSize = img.src.length;</span><br><span class="line">    <span class="keyword">var</span> width = img.width;</span><br><span class="line">    <span class="keyword">var</span> height = img.height;</span><br><span class="line">    <span class="comment">// 如果图片大于四百万像素，计算压缩比并将大小压至400万以下</span></span><br><span class="line">    <span class="keyword">var</span> ratio;</span><br><span class="line">    <span class="keyword">if</span> ((ratio = width * height / <span class="number">4000000</span>) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        ratio = <span class="built_in">Math</span>.sqrt(ratio);</span><br><span class="line">        width /= ratio;</span><br><span class="line">        height /= ratio;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ratio = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    canvas.width = width;</span><br><span class="line">    canvas.height = height;</span><br><span class="line">    <span class="comment">// 铺底色</span></span><br><span class="line">    ctx.fillStyle = <span class="string">"#fff"</span>;</span><br><span class="line">    ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);</span><br><span class="line">    <span class="comment">// 如果图片像素大于100万则使用瓦片绘制</span></span><br><span class="line">    <span class="keyword">var</span> count;</span><br><span class="line">    <span class="keyword">if</span> ((count = width * height / <span class="number">1000000</span>) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        count = ~~(<span class="built_in">Math</span>.sqrt(count) + <span class="number">1</span>); <span class="comment">// 计算要分成多少块瓦片</span></span><br><span class="line">        <span class="comment">// 计算每块瓦片的宽和高</span></span><br><span class="line">        <span class="keyword">var</span> nw = ~~(width / count);</span><br><span class="line">        <span class="keyword">var</span> nh = ~~(height / count);</span><br><span class="line">        tCanvas.width = nw;</span><br><span class="line">        tCanvas.height = nh;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; count; j++) &#123;</span><br><span class="line">                tctx.drawImage(img, i * nw * ratio, j * nh * ratio, nw * ratio, nh * ratio, <span class="number">0</span>, <span class="number">0</span>, nw, nh);</span><br><span class="line">                ctx.drawImage(tCanvas, i * nw, j * nh, nw, nh);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ctx.drawImage(img, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 进行最小压缩</span></span><br><span class="line">    <span class="keyword">var</span> ndata = canvas.toDataURL(<span class="string">'image/jpeg'</span>, <span class="number">0.1</span>);</span><br><span class="line">    tCanvas.width = tCanvas.height = canvas.width = canvas.height = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> ndata; <span class="comment">// 返回压缩后的数据 格式: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAE...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -419,7 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -432,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/12/vue/vue-props-emit/" rel="next" title="vue父子组件通信">
-                <i class="fa fa-chevron-left"></i> vue父子组件通信
+              <a href="/2016/12/02/css/mediacy-div/" rel="next" title="div居中方法">
+                <i class="fa fa-chevron-left"></i> div居中方法
               </a>
             
           </div>
@@ -442,8 +436,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/22/javascript/debounce/" rel="prev" title="函数防抖">
-                函数防抖 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/10/util/fiddler-https/" rel="prev" title="Fiddler 4 捕获 https 请求">
+                Fiddler 4 捕获 https 请求 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -496,17 +490,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/22318156?s=460&v=4"
@@ -632,22 +617,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Bus"><span class="nav-number">1.</span> <span class="nav-text">Event Bus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vuex"><span class="nav-number">2.</span> <span class="nav-text">vuex</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
