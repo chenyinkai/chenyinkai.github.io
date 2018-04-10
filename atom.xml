@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyinkai.github.io/"/>
-  <updated>2018-04-02T14:13:58.000Z</updated>
+  <updated>2018-04-10T12:39:12.000Z</updated>
   <id>http://chenyinkai.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vertical-align 的使用</title>
+    <link href="http://chenyinkai.github.io/2018/04/09/css/image-text/"/>
+    <id>http://chenyinkai.github.io/2018/04/09/css/image-text/</id>
+    <published>2018-04-08T16:00:00.000Z</published>
+    <updated>2018-04-10T12:39:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 &lt;code&gt;segmentfault&lt;/code&gt; 看到这样一个&lt;a href=&quot;https://jsfiddle.net/qvbtqav7/4/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;问题&lt;/a&gt;, 问两个 &lt;code&gt;display: inline-block;&lt;/code&gt; 的元素为什么不能对齐显示。 于是想到了使用 &lt;code&gt;vertical-align&lt;/code&gt; 来解决。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://chenyinkai.github.io/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://chenyinkai.github.io/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>arguments 与 剩余参数(...args) 的区别</title>
@@ -58,26 +78,6 @@
   </entry>
   
   <entry>
-    <title>http状态码 200(From Cache)和 304(Not Modified)的区别</title>
-    <link href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
-    <id>http://chenyinkai.github.io/2018/03/21/web/200-304/</id>
-    <published>2018-03-20T16:00:00.000Z</published>
-    <updated>2018-03-22T04:59:03.499Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="http" scheme="http://chenyinkai.github.io/categories/http/"/>
-    
-    
-      <category term="http" scheme="http://chenyinkai.github.io/tags/http/"/>
-    
-  </entry>
-  
-  <entry>
     <title>更优雅的处理异步方式--async await</title>
     <link href="http://chenyinkai.github.io/2018/03/21/javascript/async-await/"/>
     <id>http://chenyinkai.github.io/2018/03/21/javascript/async-await/</id>
@@ -96,6 +96,26 @@
       <category term="javascript" scheme="http://chenyinkai.github.io/tags/javascript/"/>
     
       <category term="ES6" scheme="http://chenyinkai.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http状态码 200(From Cache)和 304(Not Modified)的区别</title>
+    <link href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
+    <id>http://chenyinkai.github.io/2018/03/21/web/200-304/</id>
+    <published>2018-03-20T16:00:00.000Z</published>
+    <updated>2018-03-22T04:59:03.499Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="http" scheme="http://chenyinkai.github.io/categories/http/"/>
+    
+    
+      <category term="http" scheme="http://chenyinkai.github.io/tags/http/"/>
     
   </entry>
   
@@ -406,28 +426,6 @@
     
     
       <category term="css" scheme="http://chenyinkai.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序富文本解析插件--wxParse</title>
-    <link href="http://chenyinkai.github.io/2017/08/15/wechat/wxParse/"/>
-    <id>http://chenyinkai.github.io/2017/08/15/wechat/wxParse/</id>
-    <published>2017-08-15T08:49:25.000Z</published>
-    <updated>2018-02-10T03:22:11.033Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天在写小程序的时候，碰到数据中带有html标签，&lt;br&gt;&lt;img src=&quot;/images/wxParse.png&quot; alt=&quot;&quot;&gt;，小程序中又没有类似于 v-html 指令可以解析html文本，这时候，wxParse的作用就体现出来了。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小程序" scheme="http://chenyinkai.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://chenyinkai.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-      <category term="wxParse" scheme="http://chenyinkai.github.io/tags/wxParse/"/>
     
   </entry>
   
