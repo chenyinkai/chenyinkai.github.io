@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyinkai.github.io/"/>
-  <updated>2018-04-10T12:39:12.000Z</updated>
+  <updated>2018-04-11T10:47:11.000Z</updated>
   <id>http://chenyinkai.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim 常用命令</title>
+    <link href="http://chenyinkai.github.io/2018/04/11/web/vim/"/>
+    <id>http://chenyinkai.github.io/2018/04/11/web/vim/</id>
+    <published>2018-04-10T16:00:00.000Z</published>
+    <updated>2018-04-11T10:47:11.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近阿里云搞活动，于是入手了个服务器，记录一下操作过程中的一些常用 &lt;code&gt;vim&lt;/code&gt; 命令。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://chenyinkai.github.io/categories/web/"/>
+    
+    
+      <category term="web" scheme="http://chenyinkai.github.io/tags/web/"/>
+    
+      <category term="linux" scheme="http://chenyinkai.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>vertical-align 的使用</title>
@@ -78,6 +100,26 @@
   </entry>
   
   <entry>
+    <title>http状态码 200(From Cache)和 304(Not Modified)的区别</title>
+    <link href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
+    <id>http://chenyinkai.github.io/2018/03/21/web/200-304/</id>
+    <published>2018-03-20T16:00:00.000Z</published>
+    <updated>2018-03-22T04:59:03.499Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="http" scheme="http://chenyinkai.github.io/categories/http/"/>
+    
+    
+      <category term="http" scheme="http://chenyinkai.github.io/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
     <title>更优雅的处理异步方式--async await</title>
     <link href="http://chenyinkai.github.io/2018/03/21/javascript/async-await/"/>
     <id>http://chenyinkai.github.io/2018/03/21/javascript/async-await/</id>
@@ -96,26 +138,6 @@
       <category term="javascript" scheme="http://chenyinkai.github.io/tags/javascript/"/>
     
       <category term="ES6" scheme="http://chenyinkai.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>http状态码 200(From Cache)和 304(Not Modified)的区别</title>
-    <link href="http://chenyinkai.github.io/2018/03/21/web/200-304/"/>
-    <id>http://chenyinkai.github.io/2018/03/21/web/200-304/</id>
-    <published>2018-03-20T16:00:00.000Z</published>
-    <updated>2018-03-22T04:59:03.499Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文将会简单介绍下http状态码 200(From Cache)和 304(Not Modified)的区别。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="http" scheme="http://chenyinkai.github.io/categories/http/"/>
-    
-    
-      <category term="http" scheme="http://chenyinkai.github.io/tags/http/"/>
     
   </entry>
   
@@ -406,26 +428,6 @@
       <category term="vue" scheme="http://chenyinkai.github.io/tags/vue/"/>
     
       <category term="swiper" scheme="http://chenyinkai.github.io/tags/swiper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>flex弹性盒布局</title>
-    <link href="http://chenyinkai.github.io/2017/08/16/css/flex/"/>
-    <id>http://chenyinkai.github.io/2017/08/16/css/flex/</id>
-    <published>2017-08-16T07:05:58.000Z</published>
-    <updated>2018-02-10T02:19:54.626Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;点击&lt;a href=&quot;http://caniuse.com/#search=flex&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;，你可以查看浏览器对于 flex 的支持程度。&lt;br&gt;本文主要介绍和 &lt;code&gt;flex&lt;/code&gt; 相关的属性。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="css" scheme="http://chenyinkai.github.io/categories/css/"/>
-    
-    
-      <category term="css" scheme="http://chenyinkai.github.io/tags/css/"/>
     
   </entry>
   
