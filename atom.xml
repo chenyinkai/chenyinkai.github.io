@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenyinkai.github.io/"/>
-  <updated>2018-04-18T13:05:09.626Z</updated>
+  <updated>2018-04-19T14:29:35.000Z</updated>
   <id>http://chenyinkai.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS 和 JS 实现持续的动画效果</title>
+    <link href="http://chenyinkai.github.io/2018/04/19/javascript/animation/"/>
+    <id>http://chenyinkai.github.io/2018/04/19/javascript/animation/</id>
+    <published>2018-04-18T16:00:00.000Z</published>
+    <updated>2018-04-19T14:29:35.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 &lt;code&gt;sf&lt;/code&gt; 上看到一个问题, &lt;code&gt;js&lt;/code&gt; 是怎么实现持续的动画效果的? 第一时间想到的是定时器, 后来看到有答案提到了 &lt;code&gt;requestAnimationFrame&lt;/code&gt;, 由于之前没有对相关方法有所了解, 于是便去查了下, 顺便也复习了下 &lt;code&gt;animation&lt;/code&gt; 的使用.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="css" scheme="http://chenyinkai.github.io/categories/css/"/>
+    
+      <category term="javascript" scheme="http://chenyinkai.github.io/categories/css/javascript/"/>
+    
+    
+      <category term="css" scheme="http://chenyinkai.github.io/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx配置多个vue项目</title>
@@ -410,26 +432,6 @@
       <category term="移动端" scheme="http://chenyinkai.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
       <category term="HTML5" scheme="http://chenyinkai.github.io/tags/HTML5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>webpack-proxyTable解决开发环境下跨域问题</title>
-    <link href="http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/"/>
-    <id>http://chenyinkai.github.io/2017/08/28/vue/webpack-proxyTable/</id>
-    <published>2017-08-28T10:24:33.000Z</published>
-    <updated>2018-02-10T03:16:36.625Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://vuejs-templates.github.io/webpack/proxy.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vue开发期间的API代理&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="webpack" scheme="http://chenyinkai.github.io/categories/webpack/"/>
-    
-    
-      <category term="webpack" scheme="http://chenyinkai.github.io/tags/webpack/"/>
     
   </entry>
   
